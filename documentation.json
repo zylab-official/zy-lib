@@ -1,0 +1,229 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [
+        {
+            "name": "ZyLibService",
+            "id": "injectable-ZyLibService-6efaa6fc36ad645cd050cc6161f5b3b3",
+            "file": "projects/zy-lib/src/lib/zy-lib.service.ts",
+            "properties": [],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ZyLibService {\n\n  constructor() { }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 6
+            },
+            "type": "injectable"
+        }
+    ],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ZyLibComponent",
+            "id": "component-ZyLibComponent-50383c7b01ddb2b92799f55e9c38431d",
+            "file": "projects/zy-lib/src/lib/zy-lib.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-zy-lib",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p>\n  zy-lib works!\n</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-zy-lib',\n  template: `\n    <p>\n      zy-lib works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class ZyLibComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ]
+        }
+    ],
+    "modules": [
+        {
+            "name": "ZyLibModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ZyLibComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ZyLibComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/zy-lib/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/task.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: ZyLibComponent,\r\n    props: {\r\n    },\r\n})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/zy-lib/src/test.ts",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/zy-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/zy-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/zy-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "stories/task.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/task.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: ZyLibComponent,\r\n    props: {\r\n    },\r\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/zy-lib/src/lib/zy-lib.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ZyLibComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/lib/zy-lib.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ZyLibService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
