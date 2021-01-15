@@ -23,24 +23,30 @@
     "directives": [],
     "components": [
         {
-            "name": "ZyLibComponent",
-            "id": "component-ZyLibComponent-693603d313248c5b3f01041847e673f3",
-            "file": "projects/zy-lib/src/lib/basic/zy-lib.component.ts",
+            "name": "ZyBasicComponent",
+            "id": "component-ZyBasicComponent-36ee2f34f161963b903f6654e4df9dcb",
+            "file": "projects/zy-lib/src/lib/basic/basic.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lib-zy-lib",
+            "selector": "zy-basic",
             "styleUrls": [
-                "./zy-lib.component.scss"
+                "./basic.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./zy-lib.component.html"
+                "./basic.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "doBorder",
+                    "defaultValue": "false",
+                    "line": 10,
+                    "type": "boolean"
+                },
                 {
                     "name": "text",
                     "line": 9,
@@ -56,7 +62,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13
+                    "line": 14
                 }
             ],
             "hostBindings": [],
@@ -64,12 +70,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-zy-lib',\r\n  templateUrl: './zy-lib.component.html',\r\n  styleUrls: ['./zy-lib.component.scss']\r\n})\r\nexport class ZyLibComponent implements OnInit {\r\n  @Input() text: string;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'zy-basic',\r\n  templateUrl: './basic.component.html',\r\n  styleUrls: ['./basic.component.scss']\r\n})\r\nexport class ZyBasicComponent implements OnInit {\r\n  @Input() text: string;\r\n  @Input() doBorder: boolean = false;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
-                    "styleUrl": "./zy-lib.component.scss"
+                    "data": ":host {\r\n    .is-border {\r\n        padding: 10px;\r\n        border: 1px solid #ccc;\r\n    }\r\n}",
+                    "styleUrl": "./basic.component.scss"
                 }
             ],
             "stylesData": "",
@@ -77,12 +83,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 9
+                "line": 10
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>zy-lib works!</p>\r\n<p>External text: {{ text }}</p>"
+            "templateData": "<div [class.is-border]=\"doBorder\">\r\n    <p>zy-lib works!</p>\r\n    <p>External text: {{ text }}</p>\r\n</div>"
         }
     ],
     "modules": [
@@ -97,7 +103,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "ZyLibComponent"
+                            "name": "ZyBasicComponent"
                         }
                     ]
                 },
@@ -109,7 +115,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "ZyLibComponent"
+                            "name": "ZyBasicComponent"
                         }
                     ]
                 },
@@ -140,7 +146,7 @@
                 "subtype": "variable",
                 "file": "stories/task.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: ZyLibComponent,\r\n    props: {\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
             },
             {
                 "name": "require",
@@ -148,6 +154,22 @@
                 "subtype": "variable",
                 "file": "projects/zy-lib/src/test.ts",
                 "type": "literal type"
+            },
+            {
+                "name": "WithText",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/task.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
+            },
+            {
+                "name": "WithTextAndBorder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/task.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!',\r\n        doBorder: true\r\n    },\r\n})"
             }
         ],
         "functions": [],
@@ -178,7 +200,23 @@
                     "subtype": "variable",
                     "file": "stories/task.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: ZyLibComponent,\r\n    props: {\r\n    },\r\n})"
+                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
+                },
+                {
+                    "name": "WithText",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/task.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
+                },
+                {
+                    "name": "WithTextAndBorder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/task.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!',\r\n        doBorder: true\r\n    },\r\n})"
                 }
             ]
         },
@@ -192,12 +230,12 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/zy-lib/src/lib/basic/zy-lib.component.ts",
+                "filePath": "projects/zy-lib/src/lib/basic/basic.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ZyLibComponent",
+                "name": "ZyBasicComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -235,6 +273,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithText",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithTextAndBorder",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
