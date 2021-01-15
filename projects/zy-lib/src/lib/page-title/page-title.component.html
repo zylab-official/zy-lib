@@ -1,0 +1,28 @@
+<div *ngIf="!inactive" class="columns is-mobile">
+    <div class="column is-narrow is-icon">
+        <ng-content select="[page-title-icon]"></ng-content>
+    </div>
+    <div class="column is-wide">
+        <div>
+            <div class="columns page-title is-gapless is-mobile is-centered">
+                <div class="column page-title-text is-narrow">
+                    <span data-test-page-title>{{title}}</span>
+                </div>
+                <div class="column is-narrow">
+                    <ng-content select="[page-title-extra]"></ng-content>
+                </div>
+                <div class="column has-text-centered">
+                    <ng-content select="[page-title-content-centered]"></ng-content>
+                </div>
+                <div class="column is-narrow">
+                    <ng-content select="[page-title-content-right]"></ng-content>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="columns is-gapless is-mobile">
+                <ng-content select="[page-title-subheader]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>
