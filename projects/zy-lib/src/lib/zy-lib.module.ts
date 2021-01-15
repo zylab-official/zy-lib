@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { ZyLibComponent } from './zy-lib.component';
-
-
+import { ZyBasicComponent } from './basic/basic.component';
 
 @NgModule({
-  declarations: [ZyLibComponent],
+  declarations: [ZyBasicComponent],
   imports: [
   ],
-  exports: [ZyLibComponent]
+  exports: [ZyBasicComponent]
 })
 export class ZyLibModule { }

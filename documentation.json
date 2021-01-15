@@ -4,12 +4,12 @@
     "injectables": [
         {
             "name": "ZyLibService",
-            "id": "injectable-ZyLibService-6efaa6fc36ad645cd050cc6161f5b3b3",
+            "id": "injectable-ZyLibService-2d509a0d8c0b4040c8217cf0cce22770",
             "file": "projects/zy-lib/src/lib/zy-lib.service.ts",
             "properties": [],
             "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ZyLibService {\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ZyLibService {\r\n\r\n  constructor() { }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -24,20 +24,29 @@
     "components": [
         {
             "name": "ZyLibComponent",
-            "id": "component-ZyLibComponent-50383c7b01ddb2b92799f55e9c38431d",
-            "file": "projects/zy-lib/src/lib/zy-lib.component.ts",
+            "id": "component-ZyLibComponent-693603d313248c5b3f01041847e673f3",
+            "file": "projects/zy-lib/src/lib/basic/zy-lib.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "lib-zy-lib",
-            "styleUrls": [],
+            "styleUrls": [
+                "./zy-lib.component.scss"
+            ],
             "styles": [],
-            "template": "<p>\n  zy-lib works!\n</p>\n",
-            "templateUrl": [],
+            "templateUrl": [
+                "./zy-lib.component.html"
+            ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "line": 9,
+                    "type": "string"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -47,7 +56,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17
+                    "line": 13
                 }
             ],
             "hostBindings": [],
@@ -55,19 +64,25 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-zy-lib',\n  template: `\n    <p>\n      zy-lib works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class ZyLibComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-zy-lib',\r\n  templateUrl: './zy-lib.component.html',\r\n  styleUrls: ['./zy-lib.component.scss']\r\n})\r\nexport class ZyLibComponent implements OnInit {\r\n  @Input() text: string;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./zy-lib.component.scss"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 13
+                "line": 9
             },
             "implements": [
                 "OnInit"
-            ]
+            ],
+            "templateData": "<p>zy-lib works!</p>\r\n<p>External text: {{ text }}</p>"
         }
     ],
     "modules": [
@@ -177,12 +192,12 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/zy-lib/src/lib/zy-lib.component.ts",
+                "filePath": "projects/zy-lib/src/lib/basic/zy-lib.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ZyLibComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

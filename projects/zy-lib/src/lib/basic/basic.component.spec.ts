@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ZyBasicComponent } from './basic.component';
 
-import { ZyLibComponent } from './zy-lib.component';
 
 describe('ZyLibComponent', () => {
-  let component: ZyLibComponent;
-  let fixture: ComponentFixture<ZyLibComponent>;
+  let component: ZyBasicComponent;
+  let fixture: ComponentFixture<ZyBasicComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ZyLibComponent ]
+      declarations: [ ZyBasicComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZyLibComponent);
+    fixture = TestBed.createComponent(ZyBasicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
