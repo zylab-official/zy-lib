@@ -22,7 +22,7 @@ export const WithText = () => ({
 export const WithTextAndBorder = () => ({
     component: ZyBasicComponent,
     props: {
-        text: 'Hello, world!',
+        text: 'Hello, world! Now with border.',
         doBorder: true
     },
 });
