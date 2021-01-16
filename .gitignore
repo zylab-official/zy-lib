@@ -46,5 +46,5 @@ testem.log
 Thumbs.db
 
 # StoryBook
-storybook-static
-docs
+# storybook-static
+# docs
