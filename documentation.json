@@ -4,12 +4,12 @@
     "injectables": [
         {
             "name": "ZyLibService",
-            "id": "injectable-ZyLibService-2d509a0d8c0b4040c8217cf0cce22770",
+            "id": "injectable-ZyLibService-6efaa6fc36ad645cd050cc6161f5b3b3",
             "file": "projects/zy-lib/src/lib/zy-lib.service.ts",
             "properties": [],
             "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ZyLibService {\r\n\r\n  constructor() { }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ZyLibService {\n\n  constructor() { }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -22,6 +22,229 @@
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-801e6cbe9e1838c6d26b6c3d317a8202",
+            "file": "projects/zy-lib/src/lib/checkbox/checkbox.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "zy-checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "autofocus",
+                    "defaultValue": "false",
+                    "line": 17
+                },
+                {
+                    "name": "checked",
+                    "line": 9,
+                    "type": "boolean"
+                },
+                {
+                    "name": "disabled",
+                    "line": 19,
+                    "type": "boolean"
+                },
+                {
+                    "name": "indeterminate",
+                    "line": 16,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "checkedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "line": 42,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<MouseEvent>()",
+                    "line": 43,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "_checked",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 49,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "checkbox",
+                    "type": "HTMLInputElement",
+                    "optional": false,
+                    "description": "",
+                    "line": 50,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "ignoreTimeout",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 51,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 53
+                }
+            ],
+            "hostBindings": [
+                {
+                    "name": "class.checkbox",
+                    "defaultValue": "true",
+                    "line": 20
+                }
+            ],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 23
+                }
+            ],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnDestroy, Output, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'zy-checkbox',\r\n    templateUrl: './checkbox.component.html',\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class CheckboxComponent implements OnDestroy {\r\n    @Input() set checked(checked: boolean) {\r\n        this._checked = checked;\r\n        this.checkbox.checked = checked;  // selection is not always updated based on the model in IE, hence explicitly setting the value via DOM\r\n    }\r\n    get checked(): boolean {\r\n        return this._checked;\r\n    }\r\n    @Input() indeterminate: boolean;\r\n    @Input() autofocus = false;\r\n\r\n    @Input() @HostBinding('class.is-disabled') disabled: boolean;\r\n    @HostBinding('class.checkbox') isCheckbox = true;\r\n\r\n    // handling 'click' on the element rather than on checkbox as FireFox does not trigger 'click' on checkbox if SHIFT is pressed\r\n    @HostListener('click', ['$event']) onMouseClick(event: MouseEvent) {\r\n        if (!this.ignoreTimeout) {\r\n\r\n            this.checkedChange.next(!this._checked);\r\n\r\n            this.onClick.next(<any>{\r\n                shiftKey: event.shiftKey\r\n            });\r\n\r\n            // 'click' event might be triggered on the label element and/or bubbled up from the checkbox element -> ignore the second event\r\n            this.ignoreTimeout = window.setTimeout(() => {\r\n                this.ignoreTimeout = 0;\r\n            });\r\n        }\r\n        this.checkbox.checked = this.checked;\r\n        this.checkbox.indeterminate = this.indeterminate;\r\n        this.checkbox.focus();    // compensating for focus not being set due to [dr-prevent-default-on-mousedown]\r\n    }\r\n\r\n    @Output() checkedChange = new EventEmitter<boolean>();\r\n    @Output() onClick = new EventEmitter<MouseEvent>();\r\n\r\n    @ViewChild('checkbox') set checkboxRef(checkboxRef: ElementRef) {\r\n        this.checkbox = checkboxRef.nativeElement;\r\n    }\r\n\r\n    private _checked: boolean;\r\n    private checkbox: HTMLInputElement;\r\n    private ignoreTimeout: number;\r\n\r\n    ngOnDestroy() {\r\n        if (this.ignoreTimeout) {\r\n            window.clearTimeout(this.ignoreTimeout);\r\n        }\r\n    }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "implements": [
+                "OnDestroy"
+            ],
+            "accessors": {
+                "checked": {
+                    "name": "checked",
+                    "setSignature": {
+                        "name": "checked",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "checked",
+                                "type": "boolean"
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 9,
+                        "jsdoctags": [
+                            {
+                                "name": "checked",
+                                "type": "boolean",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "checked",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 13
+                    }
+                },
+                "checkboxRef": {
+                    "name": "checkboxRef",
+                    "setSignature": {
+                        "name": "checkboxRef",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "checkboxRef",
+                                "type": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 45,
+                        "jsdoctags": [
+                            {
+                                "name": "checkboxRef",
+                                "type": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" [dr-autofocus]=\"autofocus\" />\r\n<i dr-prevent-default-on-mousedown data-test-checkbox></i>"
+        },
+        {
+            "name": "PageTitleComponent",
+            "id": "component-PageTitleComponent-378535dd0dfe6e94e402940e77e8802d",
+            "file": "projects/zy-lib/src/lib/page-title/page-title.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "page-title",
+            "styleUrls": [
+                "./page-title.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page-title.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { Title } from '@angular/platform-browser';\r\n// import { ActivatedRoute } from '@angular/router';\r\n// import { ErrorDisplayService, PageTitle, PageTitleService } from 'app/core';\r\n// import { empty, of, Subscription } from 'rxjs';\r\n// import { filter, switchMap, tap } from 'rxjs/operators';\r\n\r\n@Component({\r\n    selector: 'page-title',\r\n    templateUrl: './page-title.component.html',\r\n    styleUrls: ['./page-title.component.scss']\r\n})\r\nexport class PageTitleComponent /* implements OnInit, OnDestroy */ {\r\n    // @HostBinding('class.inactive') public inactive: boolean;\r\n\r\n    // public title: string;\r\n    // private subscriptions: Subscription[] = [];\r\n\r\n    // public constructor(\r\n    //     private errorDisplayService: ErrorDisplayService,\r\n    //     private titleService: PageTitleService,\r\n    //     private route: ActivatedRoute,\r\n    //     private browserTitle: Title\r\n    // ) {}\r\n\r\n    // ngOnInit() {\r\n    //     let ownDepth = this.route.snapshot.pathFromRoot.length;\r\n    //     this.subscriptions.push(this.titleService.activeTitleComponentObservable.pipe(\r\n    //         switchMap(c => {\r\n    //             if (c && c.component === this) {\r\n    //                 this.inactive = false;\r\n    //                 return this.titleService.titleObservable;\r\n    //             } else {\r\n    //                 this.inactive = true;\r\n    //                 if (!c || c.depth < ownDepth) {\r\n    //                     return of(new PageTitle(\"\")).pipe(\r\n    //                         tap(x => {\r\n    //                             this.titleService.registerTitleComponent(this, ownDepth);   // this call can trigger another notification,\r\n    //                             // therefore invoking it after returning an observable to ensure the observable from this switchMap execution\r\n    //                             // does not override the next one\r\n    //                         }),\r\n    //                         filter(x => false));\r\n    //                 } else {\r\n    //                     return empty();\r\n    //                 }\r\n    //             }\r\n    //         }))\r\n    //         .subscribe({\r\n    //             next: title => {\r\n    //                 this.title = title.text;\r\n\r\n    //                 let ediscoveryText = \"ZyLAB ONE eDiscovery\"; // TODO: i18n\r\n    //                 if (title && title.text && title.text.trim().length > 0)\r\n    //                     this.browserTitle.setTitle(`${title.text} - ${ediscoveryText}`);\r\n    //                 else\r\n    //                     this.browserTitle.setTitle(`${ediscoveryText}`);\r\n    //             },\r\n    //             error: e => this.errorDisplayService.show(e)\r\n    //         }));\r\n    // }\r\n\r\n    // ngOnDestroy() {\r\n    //     this.subscriptions.forEach(s => s.unsubscribe());\r\n    //     this.titleService.unregisterTitleComponent(this);\r\n    // }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../../styles/settings/_all.scss';\r\n\r\n:host {\r\n  display: block;\r\n}\r\n\r\n:host(.inactive) {\r\n  display: none;\r\n}\r\n\r\n.page-title {\r\n  border: 0;\r\n  border-bottom: solid 1px transparent;\r\n\r\n  .page-title-text {\r\n    color: $color-text-secondary;\r\n    font-weight: normal;\r\n    font-size: $font-size-title;\r\n    line-height: normal;\r\n    flex-shrink: 1;\r\n    white-space: nowrap;\r\n    margin-right: 10px;\r\n    max-width: 40vw;  // using max-width because 'white-space: nowrap' with 'is-narrow' (flex: none) will lead to the fixed width\r\n\r\n    span {\r\n      @include overflow-ellipsis;\r\n      display: inline-block;\r\n      width: 100%;\r\n      vertical-align: middle;\r\n    }\r\n  }\r\n\r\n  .page-title-content-right {\r\n    display: flex;\r\n  }\r\n}\r\n\r\n.is-wide {\r\n  padding: 0;\r\n}\r\n\r\n.is-icon {\r\n  padding: 0;\r\n}\r\n",
+                    "styleUrl": "./page-title.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div *ngIf=\"!inactive\" class=\"columns is-mobile\">\r\n    <div class=\"column is-narrow is-icon\">\r\n        <ng-content select=\"[page-title-icon]\"></ng-content>\r\n    </div>\r\n    <div class=\"column is-wide\">\r\n        <div>\r\n            <div class=\"columns page-title is-gapless is-mobile is-centered\">\r\n                <div class=\"column page-title-text is-narrow\">\r\n                    <span data-test-page-title>{{title}}</span>\r\n                </div>\r\n                <div class=\"column is-narrow\">\r\n                    <ng-content select=\"[page-title-extra]\"></ng-content>\r\n                </div>\r\n                <div class=\"column has-text-centered\">\r\n                    <ng-content select=\"[page-title-content-centered]\"></ng-content>\r\n                </div>\r\n                <div class=\"column is-narrow\">\r\n                    <ng-content select=\"[page-title-content-right]\"></ng-content>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div>\r\n            <div class=\"columns is-gapless is-mobile\">\r\n                <ng-content select=\"[page-title-subheader]\"></ng-content>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+        },
         {
             "name": "ZyBasicComponent",
             "id": "component-ZyBasicComponent-36ee2f34f161963b903f6654e4df9dcb",
@@ -144,9 +367,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/task.stories.ts",
+                "file": "stories/basic.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/checkbox.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n})"
             },
             {
                 "name": "require",
@@ -159,7 +390,7 @@
                 "name": "WithText",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/task.stories.ts",
+                "file": "stories/basic.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
             },
@@ -167,9 +398,9 @@
                 "name": "WithTextAndBorder",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/task.stories.ts",
+                "file": "stories/basic.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!',\r\n        doBorder: true\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world! Now with border.',\r\n        doBorder: true\r\n    },\r\n})"
             }
         ],
         "functions": [],
@@ -193,12 +424,12 @@
                     "type": "literal type"
                 }
             ],
-            "stories/task.stories.ts": [
+            "stories/basic.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/task.stories.ts",
+                    "file": "stories/basic.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
                 },
@@ -206,7 +437,7 @@
                     "name": "WithText",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/task.stories.ts",
+                    "file": "stories/basic.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
                 },
@@ -214,9 +445,19 @@
                     "name": "WithTextAndBorder",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/task.stories.ts",
+                    "file": "stories/basic.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!',\r\n        doBorder: true\r\n    },\r\n})"
+                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world! Now with border.',\r\n        doBorder: true\r\n    },\r\n})"
+                }
+            ],
+            "stories/checkbox.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/checkbox.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n})"
                 }
             ]
         },
@@ -236,6 +477,24 @@
                 "name": "ZyBasicComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/lib/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/lib/page-title/page-title.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageTitleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -268,7 +527,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/task.stories.ts",
+                "filePath": "stories/basic.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -278,7 +537,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/task.stories.ts",
+                "filePath": "stories/basic.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -288,11 +547,21 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/task.stories.ts",
+                "filePath": "stories/basic.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithTextAndBorder",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

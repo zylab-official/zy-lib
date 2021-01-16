@@ -14,16 +14,9 @@ export class CheckboxComponent implements OnDestroy {
         return this._checked;
     }
     @Input() indeterminate: boolean;
-    @Input() @HostBinding('class.is-disabled') disabled: boolean;
     @Input() autofocus = false;
 
-    @Output() checkedChange = new EventEmitter<boolean>();
-    @Output() onClick = new EventEmitter<MouseEvent>();
-
-    @ViewChild('checkbox') set checkboxRef(checkboxRef: ElementRef) {
-        this.checkbox = checkboxRef.nativeElement;
-    }
-
+    @Input() @HostBinding('class.is-disabled') disabled: boolean;
     @HostBinding('class.checkbox') isCheckbox = true;
 
     // handling 'click' on the element rather than on checkbox as FireFox does not trigger 'click' on checkbox if SHIFT is pressed
@@ -44,6 +37,13 @@ export class CheckboxComponent implements OnDestroy {
         this.checkbox.checked = this.checked;
         this.checkbox.indeterminate = this.indeterminate;
         this.checkbox.focus();    // compensating for focus not being set due to [dr-prevent-default-on-mousedown]
+    }
+
+    @Output() checkedChange = new EventEmitter<boolean>();
+    @Output() onClick = new EventEmitter<MouseEvent>();
+
+    @ViewChild('checkbox') set checkboxRef(checkboxRef: ElementRef) {
+        this.checkbox = checkboxRef.nativeElement;
     }
 
     private _checked: boolean;
