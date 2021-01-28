@@ -205,7 +205,7 @@
                     }
                 }
             },
-            "templateData": "<input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" [dr-autofocus]=\"autofocus\" />\r\n<i dr-prevent-default-on-mousedown data-test-checkbox></i>"
+            "templateData": "<!-- <input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" [dr-autofocus]=\"autofocus\" /> -->\r\n<input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" />\r\n<i dr-prevent-default-on-mousedown data-test-checkbox></i>"
         },
         {
             "name": "PageTitleComponent",
@@ -356,6 +356,14 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Checked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/checkbox.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: true\r\n    },\r\n})"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -372,12 +380,12 @@
                 "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
             },
             {
-                "name": "Default",
+                "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/checkbox.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n})"
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        disabled: true\r\n    },\r\n})"
             },
             {
                 "name": "require",
@@ -385,6 +393,14 @@
                 "subtype": "variable",
                 "file": "projects/zy-lib/src/test.ts",
                 "type": "literal type"
+            },
+            {
+                "name": "Unchecked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/checkbox.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: false\r\n    },\r\n})"
             },
             {
                 "name": "WithText",
@@ -407,6 +423,32 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "stories/checkbox.stories.ts": [
+                {
+                    "name": "Checked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/checkbox.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: true\r\n    },\r\n})"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/checkbox.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        disabled: true\r\n    },\r\n})"
+                },
+                {
+                    "name": "Unchecked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/checkbox.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: false\r\n    },\r\n})"
+                }
+            ],
             "projects/zy-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -448,16 +490,6 @@
                     "file": "stories/basic.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world! Now with border.',\r\n        doBorder: true\r\n    },\r\n})"
-                }
-            ],
-            "stories/checkbox.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/checkbox.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n})"
                 }
             ]
         },
@@ -561,7 +593,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Checked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Unchecked",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,8 +1,7 @@
 import { CheckboxComponent } from 'projects/zy-lib/src/public-api';
 
 export default {
-    title: 'Basic Checkboxs Component',
-    excludeStories: /.*Data$/,
+    title: 'Checkbox Component',
     parameters: {
         notes: 'some documentation here',
     },
