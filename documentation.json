@@ -4,12 +4,12 @@
     "injectables": [
         {
             "name": "ZyLibService",
-            "id": "injectable-ZyLibService-6efaa6fc36ad645cd050cc6161f5b3b3",
+            "id": "injectable-ZyLibService-2d509a0d8c0b4040c8217cf0cce22770",
             "file": "projects/zy-lib/src/lib/zy-lib.service.ts",
             "properties": [],
             "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ZyLibService {\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ZyLibService {\r\n\r\n  constructor() { }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -22,6 +22,45 @@
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-5ba4721614e5e2009c1f076879cedbc6",
+            "file": "projects/zy-lib/src/lib/button/button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "zy-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'zy-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button>Click</button>"
+        },
         {
             "name": "CheckboxComponent",
             "id": "component-CheckboxComponent-801e6cbe9e1838c6d26b6c3d317a8202",
@@ -205,7 +244,7 @@
                     }
                 }
             },
-            "templateData": "<!-- <input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" [dr-autofocus]=\"autofocus\" /> -->\r\n<input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" />\r\n<i dr-prevent-default-on-mousedown data-test-checkbox></i>"
+            "templateData": "<input #checkbox type=\"checkbox\" [ngModel]=\"checked\" [disabled]=\"disabled\" [indeterminate]=\"indeterminate\" />"
         },
         {
             "name": "PageTitleComponent",
@@ -238,80 +277,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../../styles/settings/_all.scss';\r\n\r\n:host {\r\n  display: block;\r\n}\r\n\r\n:host(.inactive) {\r\n  display: none;\r\n}\r\n\r\n.page-title {\r\n  border: 0;\r\n  border-bottom: solid 1px transparent;\r\n\r\n  .page-title-text {\r\n    color: $color-text-secondary;\r\n    font-weight: normal;\r\n    font-size: $font-size-title;\r\n    line-height: normal;\r\n    flex-shrink: 1;\r\n    white-space: nowrap;\r\n    margin-right: 10px;\r\n    max-width: 40vw;  // using max-width because 'white-space: nowrap' with 'is-narrow' (flex: none) will lead to the fixed width\r\n\r\n    span {\r\n      @include overflow-ellipsis;\r\n      display: inline-block;\r\n      width: 100%;\r\n      vertical-align: middle;\r\n    }\r\n  }\r\n\r\n  .page-title-content-right {\r\n    display: flex;\r\n  }\r\n}\r\n\r\n.is-wide {\r\n  padding: 0;\r\n}\r\n\r\n.is-icon {\r\n  padding: 0;\r\n}\r\n",
+                    "data": "// :host {\r\n//   display: block;\r\n// }\r\n\r\n// :host(.inactive) {\r\n//   display: none;\r\n// }\r\n\r\n// .page-title {\r\n//   border: 0;\r\n//   border-bottom: solid 1px transparent;\r\n\r\n//   .page-title-text {\r\n//     color: $color-text-secondary;\r\n//     font-weight: normal;\r\n//     font-size: $font-size-title;\r\n//     line-height: normal;\r\n//     flex-shrink: 1;\r\n//     white-space: nowrap;\r\n//     margin-right: 10px;\r\n//     max-width: 40vw;  // using max-width because 'white-space: nowrap' with 'is-narrow' (flex: none) will lead to the fixed width\r\n\r\n//     span {\r\n//       @include overflow-ellipsis;\r\n//       display: inline-block;\r\n//       width: 100%;\r\n//       vertical-align: middle;\r\n//     }\r\n//   }\r\n\r\n//   .page-title-content-right {\r\n//     display: flex;\r\n//   }\r\n// }\r\n\r\n// .is-wide {\r\n//   padding: 0;\r\n// }\r\n\r\n// .is-icon {\r\n//   padding: 0;\r\n// }\r\n",
                     "styleUrl": "./page-title.component.scss"
                 }
             ],
             "stylesData": "",
             "templateData": "<div *ngIf=\"!inactive\" class=\"columns is-mobile\">\r\n    <div class=\"column is-narrow is-icon\">\r\n        <ng-content select=\"[page-title-icon]\"></ng-content>\r\n    </div>\r\n    <div class=\"column is-wide\">\r\n        <div>\r\n            <div class=\"columns page-title is-gapless is-mobile is-centered\">\r\n                <div class=\"column page-title-text is-narrow\">\r\n                    <span data-test-page-title>{{title}}</span>\r\n                </div>\r\n                <div class=\"column is-narrow\">\r\n                    <ng-content select=\"[page-title-extra]\"></ng-content>\r\n                </div>\r\n                <div class=\"column has-text-centered\">\r\n                    <ng-content select=\"[page-title-content-centered]\"></ng-content>\r\n                </div>\r\n                <div class=\"column is-narrow\">\r\n                    <ng-content select=\"[page-title-content-right]\"></ng-content>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div>\r\n            <div class=\"columns is-gapless is-mobile\">\r\n                <ng-content select=\"[page-title-subheader]\"></ng-content>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
-        },
-        {
-            "name": "ZyBasicComponent",
-            "id": "component-ZyBasicComponent-36ee2f34f161963b903f6654e4df9dcb",
-            "file": "projects/zy-lib/src/lib/basic/basic.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "zy-basic",
-            "styleUrls": [
-                "./basic.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./basic.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "doBorder",
-                    "defaultValue": "false",
-                    "line": 10,
-                    "type": "boolean"
-                },
-                {
-                    "name": "text",
-                    "line": 9,
-                    "type": "string"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'zy-basic',\r\n  templateUrl: './basic.component.html',\r\n  styleUrls: ['./basic.component.scss']\r\n})\r\nexport class ZyBasicComponent implements OnInit {\r\n  @Input() text: string;\r\n  @Input() doBorder: boolean = false;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ":host {\r\n    .is-border {\r\n        padding: 10px;\r\n        border: 1px solid #ccc;\r\n    }\r\n}",
-                    "styleUrl": "./basic.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div [class.is-border]=\"doBorder\">\r\n    <p>zy-lib works!</p>\r\n    <p>External text: {{ text }}</p>\r\n</div>"
         }
     ],
     "modules": [
@@ -326,7 +297,13 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "ZyBasicComponent"
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "PageTitleComponent"
                         }
                     ]
                 },
@@ -338,7 +315,13 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "ZyBasicComponent"
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "PageTitleComponent"
                         }
                     ]
                 },
@@ -364,6 +347,14 @@
                 "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: true\r\n    },\r\n})"
             },
             {
+                "name": "components",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/zy-lib/src/lib/zy-lib.module.ts",
+                "type": "[]",
+                "defaultValue": "[CheckboxComponent, PageTitleComponent, ButtonComponent]"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -375,9 +366,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/basic.stories.ts",
+                "file": "stories/button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
+                "defaultValue": "() => ({\r\n    component: ButtonComponent,\r\n    props: {\r\n    },\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/page-title.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    component: PageTitleComponent,\r\n    props: {\r\n    },\r\n})"
             },
             {
                 "name": "Disabled",
@@ -401,22 +400,6 @@
                 "file": "stories/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: false\r\n    },\r\n})"
-            },
-            {
-                "name": "WithText",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/basic.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
-            },
-            {
-                "name": "WithTextAndBorder",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/basic.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world! Now with border.',\r\n        doBorder: true\r\n    },\r\n})"
             }
         ],
         "functions": [],
@@ -449,6 +432,16 @@
                     "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: false\r\n    },\r\n})"
                 }
             ],
+            "projects/zy-lib/src/lib/zy-lib.module.ts": [
+                {
+                    "name": "components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/zy-lib/src/lib/zy-lib.module.ts",
+                    "type": "[]",
+                    "defaultValue": "[CheckboxComponent, PageTitleComponent, ButtonComponent]"
+                }
+            ],
             "projects/zy-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -466,30 +459,24 @@
                     "type": "literal type"
                 }
             ],
-            "stories/basic.stories.ts": [
+            "stories/button.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/basic.stories.ts",
+                    "file": "stories/button.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n})"
-                },
+                    "defaultValue": "() => ({\r\n    component: ButtonComponent,\r\n    props: {\r\n    },\r\n})"
+                }
+            ],
+            "stories/page-title.stories.ts": [
                 {
-                    "name": "WithText",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/basic.stories.ts",
+                    "file": "stories/page-title.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world!'\r\n    },\r\n})"
-                },
-                {
-                    "name": "WithTextAndBorder",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/basic.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    component: ZyBasicComponent,\r\n    props: {\r\n        text: 'Hello, world! Now with border.',\r\n        doBorder: true\r\n    },\r\n})"
+                    "defaultValue": "() => ({\r\n    component: PageTitleComponent,\r\n    props: {\r\n    },\r\n})"
                 }
             ]
         },
@@ -503,12 +490,12 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/zy-lib/src/lib/basic/basic.component.ts",
+                "filePath": "projects/zy-lib/src/lib/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ZyBasicComponent",
+                "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -525,6 +512,16 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "PageTitleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/zy-lib/src/lib/zy-lib.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "components",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -559,31 +556,11 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/basic.stories.ts",
+                "filePath": "stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/basic.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithText",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/basic.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithTextAndBorder",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -614,6 +591,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Unchecked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/page-title.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
