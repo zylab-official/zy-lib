@@ -118,7 +118,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@mixin zy-button-bgc-feedback($color, $step: 2) {\r\n    $base-darken: 2%;\r\n\r\n    &:hover {\r\n        background-color: darken($color, $base-darken);\r\n    }\r\n\r\n    &:active {\r\n        background-color: darken($color, $base-darken * $step);\r\n    }\r\n}\r\n\r\n:host {\r\n    .zy-button {\r\n        display: flex;\r\n        justify-content: space-around;\r\n        align-items: center;\r\n        box-sizing: border-box;\r\n        padding: 0 10px;\r\n        width: 127px;\r\n        height: 40px;\r\n        border: none;\r\n        border-radius: 5px;\r\n        background-color: #EFEEEA;\r\n        color: #757575;\r\n        line-height: 1;\r\n        font-weight: bold;\r\n        font-size: 13px;\r\n        text-align: center;\r\n        transition: background-color .15s ease-in-out;\r\n        outline: none;\r\n        cursor: pointer;\r\n\r\n        @include zy-button-bgc-feedback(#EFEEEA);\r\n\r\n        &.is-accent {\r\n            background-color: #2196F3;\r\n            color: white;\r\n\r\n            @include zy-button-bgc-feedback(#2196F3, 3);\r\n        }\r\n\r\n        &.is-round {\r\n            width: 40px;\r\n            border-radius: 50%;\r\n            font-size: 14px;\r\n        }\r\n    }\r\n}",
+                    "data": "@mixin zy-button-bgc-feedback($color, $step: 2) {\r\n    $base-darken: 2%;\r\n\r\n    &:hover {\r\n        background-color: darken($color, $base-darken);\r\n    }\r\n\r\n    &:active {\r\n        background-color: darken($color, $base-darken * $step);\r\n    }\r\n}\r\n\r\n:host {\r\n    .zy-button {\r\n        display: flex;\r\n        justify-content: space-around;\r\n        align-items: center;\r\n        box-sizing: border-box;\r\n        padding: 0 10px;\r\n        width: 127px;\r\n        height: 40px;\r\n        border: none;\r\n        border-radius: 5px;\r\n        background-color: #EFEEEA;\r\n        color: #757575;\r\n        line-height: 1;\r\n        font-weight: bold;\r\n        font-size: 13px;\r\n        text-align: center;\r\n        transition: background-color .15s ease-in-out;\r\n        outline: none;\r\n        cursor: pointer;\r\n\r\n        @include zy-button-bgc-feedback(#EFEEEA);\r\n\r\n        // Coloring\r\n        &.is-accent {\r\n            background-color: #2196F3;\r\n            color: white;\r\n\r\n            @include zy-button-bgc-feedback(#2196F3, 3);\r\n        }\r\n\r\n        // Shape\r\n        &.is-round {\r\n            width: 40px;\r\n            border-radius: 50%;\r\n            font-size: 14px;\r\n        }\r\n\r\n        &.is-outlined {\r\n            @extend .zy-button;\r\n\r\n            border: 1px solid #9E9E9E;\r\n\r\n            &.is-accent {\r\n                border-color: #2196F3;\r\n                background-color: #BBDEFB;\r\n                color: #2196F3;\r\n\r\n                @include zy-button-bgc-feedback(#BBDEFB, 3);\r\n            }\r\n        }\r\n\r\n        &.is-ghost {\r\n            @extend .zy-button;\r\n\r\n            background-color: transparent;\r\n\r\n            &.is-accent {\r\n                background-color: transparent;\r\n                color: #2196F3;\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -173,7 +173,7 @@
                     }
                 }
             },
-            "templateData": "<button\r\n    class=\"zy-button\"\r\n    [ngClass]=\"{ 'is-accent': color === 'accent', 'is-round': type === 'round' }\"\r\n    (click)=\"clickHandler($event)\"\r\n>\r\n    <ng-content select=\"[icon]\"></ng-content>\r\n    <ng-content></ng-content>\r\n</button>"
+            "templateData": "<button\r\n    class=\"zy-button\"\r\n    [ngClass]=\"{ 'is-accent': color === 'accent', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }\"\r\n    (click)=\"clickHandler($event)\"\r\n>\r\n    <ng-content select=\"[icon]\"></ng-content>\r\n    <ng-content></ng-content>\r\n</button>"
         },
         {
             "name": "CheckboxComponent",
@@ -456,7 +456,7 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-2.stories.ts",
+                "file": "stories/buttons/outlined.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
             },
@@ -464,7 +464,15 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button.stories.ts",
+                "file": "stories/buttons/ghost.stories.ts",
+                "type": "object",
+                "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/priority.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
             },
@@ -501,6 +509,30 @@
                 "defaultValue": "() => ({\r\n    component: PageTitleComponent,\r\n    props: {\r\n    },\r\n})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/outlined.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/ghost.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/priority.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -509,68 +541,28 @@
                 "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        disabled: true\r\n    },\r\n})"
             },
             {
-                "name": "PriorityDefault",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-2.stories.ts",
+                "file": "stories/buttons/outlined.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             },
             {
-                "name": "PriorityDefault",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button.stories.ts",
+                "file": "stories/buttons/ghost.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             },
             {
-                "name": "PriorityIcon",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button-2.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-            },
-            {
-                "name": "PriorityIcon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-            },
-            {
-                "name": "PriorityPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button-2.stories.ts",
+                "file": "stories/buttons/priority.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-            },
-            {
-                "name": "PriorityPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-            },
-            {
-                "name": "PriorityPrimaryWithIcon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button-2.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-            },
-            {
-                "name": "PriorityPrimaryWithIcon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             },
             {
                 "name": "require",
@@ -580,12 +572,60 @@
                 "type": "literal type"
             },
             {
+                "name": "Rounded",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/outlined.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "Rounded",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/ghost.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "Rounded",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/priority.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
                 "name": "Unchecked",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    component: CheckboxComponent,\r\n    props: {\r\n        checked: false\r\n    },\r\n})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/outlined.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/ghost.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/priority.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             }
         ],
         "functions": [],
@@ -603,7 +643,7 @@
                 "name": "ButtonType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"default\" | \"round\"",
+                "rawtype": "\"default\" | \"round\" | \"outlined\" | \"ghost\"",
                 "file": "projects/zy-lib/src/lib/button/button-settings.ts",
                 "description": "",
                 "kind": 168
@@ -611,86 +651,128 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "stories/button-2.stories.ts": [
+            "stories/buttons/outlined.stories.ts": [
                 {
                     "name": "actionsData",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-2.stories.ts",
+                    "file": "stories/buttons/outlined.stories.ts",
                     "type": "object",
                     "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
                 },
                 {
-                    "name": "PriorityDefault",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-2.stories.ts",
+                    "file": "stories/buttons/outlined.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 },
                 {
-                    "name": "PriorityIcon",
+                    "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-2.stories.ts",
+                    "file": "stories/buttons/outlined.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "Rounded",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/outlined.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 },
                 {
-                    "name": "PriorityPrimary",
+                    "name": "WithIcon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button-2.stories.ts",
+                    "file": "stories/buttons/outlined.stories.ts",
                     "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "PriorityPrimaryWithIcon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button-2.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 }
             ],
-            "stories/button.stories.ts": [
+            "stories/buttons/ghost.stories.ts": [
                 {
                     "name": "actionsData",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button.stories.ts",
+                    "file": "stories/buttons/ghost.stories.ts",
                     "type": "object",
                     "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
                 },
                 {
-                    "name": "PriorityDefault",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button.stories.ts",
+                    "file": "stories/buttons/ghost.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/ghost.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "Rounded",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/ghost.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/ghost.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"ghost\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                }
+            ],
+            "stories/buttons/priority.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/priority.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onClickTask: action('Click!'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/priority.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"default\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Default\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 },
                 {
-                    "name": "PriorityIcon",
+                    "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "PriorityPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/button.stories.ts",
+                    "file": "stories/buttons/priority.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Action\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 },
                 {
-                    "name": "PriorityPrimaryWithIcon",
+                    "name": "Rounded",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/button.stories.ts",
+                    "file": "stories/buttons/priority.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/priority.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"accent\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>&nbsp;\r\n            With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 }
@@ -776,7 +858,7 @@
                     "name": "ButtonType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"default\" | \"round\"",
+                    "rawtype": "\"default\" | \"round\" | \"outlined\" | \"ghost\"",
                     "file": "projects/zy-lib/src/lib/button/button-settings.ts",
                     "description": "",
                     "kind": 168
@@ -856,7 +938,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/button-2.stories.ts",
+                "filePath": "stories/buttons/ghost.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -866,47 +948,47 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/button-2.stories.ts",
+                "filePath": "stories/buttons/ghost.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityDefault",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button-2.stories.ts",
+                "filePath": "stories/buttons/ghost.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityIcon",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button-2.stories.ts",
+                "filePath": "stories/buttons/ghost.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityPrimary",
+                "name": "Rounded",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button-2.stories.ts",
+                "filePath": "stories/buttons/ghost.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityPrimaryWithIcon",
+                "name": "WithIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button.stories.ts",
+                "filePath": "stories/buttons/outlined.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -916,41 +998,91 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/button.stories.ts",
+                "filePath": "stories/buttons/outlined.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityDefault",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button.stories.ts",
+                "filePath": "stories/buttons/outlined.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityIcon",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button.stories.ts",
+                "filePath": "stories/buttons/outlined.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityPrimary",
+                "name": "Rounded",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/button.stories.ts",
+                "filePath": "stories/buttons/outlined.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "PriorityPrimaryWithIcon",
+                "name": "WithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/priority.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/priority.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/priority.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/priority.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Rounded",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/priority.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
