@@ -1,1 +1,8 @@
-<button>Click</button>
+<button
+    class="zy-button"
+    [ngClass]="{ 'is-accent': color === 'accent', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
+    (click)="clickHandler($event)"
+>
+    <ng-content select="[icon]"></ng-content>
+    <ng-content></ng-content>
+</button>

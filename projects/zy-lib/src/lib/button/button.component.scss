@@ -1,0 +1,76 @@
+@mixin zy-button-bgc-feedback($color, $step: 2) {
+    $base-darken: 2%;
+
+    &:hover {
+        background-color: darken($color, $base-darken);
+    }
+
+    &:active {
+        background-color: darken($color, $base-darken * $step);
+    }
+}
+
+:host {
+    .zy-button {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 10px;
+        width: 127px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: #EFEEEA;
+        color: #757575;
+        line-height: 1;
+        font-weight: bold;
+        font-size: 13px;
+        text-align: center;
+        transition: background-color .15s ease-in-out;
+        outline: none;
+        cursor: pointer;
+
+        @include zy-button-bgc-feedback(#EFEEEA);
+
+        // Coloring
+        &.is-accent {
+            background-color: #2196F3;
+            color: white;
+
+            @include zy-button-bgc-feedback(#2196F3, 3);
+        }
+
+        // Shape
+        &.is-round {
+            width: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        &.is-outlined {
+            @extend .zy-button;
+
+            border: 1px solid #9E9E9E;
+
+            &.is-accent {
+                border-color: #2196F3;
+                background-color: #BBDEFB;
+                color: #2196F3;
+
+                @include zy-button-bgc-feedback(#BBDEFB, 3);
+            }
+        }
+
+        &.is-ghost {
+            @extend .zy-button;
+
+            background-color: transparent;
+
+            &.is-accent {
+                background-color: transparent;
+                color: #2196F3;
+            }
+        }
+    }
+}
