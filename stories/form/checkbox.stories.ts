@@ -1,7 +1,7 @@
 import { CheckboxComponent } from 'projects/zy-lib/src/public-api';
 
 export default {
-    title: 'Form Elements/Checkbox Component',
+    title: 'Form Elements/Checkbox',
     parameters: {
         notes: 'some documentation here',
     },
