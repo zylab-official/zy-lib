@@ -10,6 +10,20 @@
     }
 }
 
+@mixin disabled {
+    &:disabled {
+        border: 1px solid #ccc;
+        background-color: white;
+        color: #ccc;
+        cursor: default;
+
+        &:hover,
+        &:active {
+            background-color: #fff;
+        }
+    }
+}
+
 :host {
     .zy-button {
         display: flex;
@@ -21,24 +35,26 @@
         height: 40px;
         border: none;
         border-radius: 5px;
-        background-color: #EFEEEA;
+        background-color: #efeeea;
         color: #757575;
         line-height: 1;
         font-weight: bold;
         font-size: 13px;
         text-align: center;
-        transition: background-color .15s ease-in-out;
+        transition: background-color 0.15s ease-in-out;
         outline: none;
         cursor: pointer;
 
-        @include zy-button-bgc-feedback(#EFEEEA);
+        @include zy-button-bgc-feedback(#efeeea);
+        @include disabled;
 
         // Coloring
         &.is-accent {
-            background-color: #2196F3;
+            background-color: #2196f3;
             color: white;
 
-            @include zy-button-bgc-feedback(#2196F3, 3);
+            @include zy-button-bgc-feedback(#2196f3, 3);
+            @include disabled;
         }
 
         // Shape
@@ -46,19 +62,22 @@
             width: 40px;
             border-radius: 50%;
             font-size: 14px;
+
+            @include disabled;
         }
 
         &.is-outlined {
             @extend .zy-button;
 
-            border: 1px solid #9E9E9E;
+            border: 1px solid #9e9e9e;
 
             &.is-accent {
-                border-color: #2196F3;
-                background-color: #BBDEFB;
-                color: #2196F3;
+                border-color: #2196f3;
+                background-color: #bbdefb;
+                color: #2196f3;
 
-                @include zy-button-bgc-feedback(#BBDEFB, 3);
+                @include zy-button-bgc-feedback(#bbdefb, 3);
+                @include disabled;
             }
         }
 
@@ -69,7 +88,7 @@
 
             &.is-accent {
                 background-color: transparent;
-                color: #2196F3;
+                color: #2196f3;
             }
         }
     }

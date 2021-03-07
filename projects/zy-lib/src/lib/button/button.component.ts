@@ -25,10 +25,19 @@ export class ButtonComponent {
         this._buttonColor = value;
     };
 
+    @Input('disabled')
+    get isDisabled(): boolean {
+        return this._disabled;
+    }
+    set isDisabled(value: boolean) {
+        this._disabled = value;
+    }
+
     @Output() onClick: EventEmitter<Event> = new EventEmitter();
 
     private _buttonType: ButtonType = 'default';
     private _buttonColor: ButtonColor = 'default';
+    private _disabled = false;
 
     clickHandler(e: Event): void {
         this.onClick.emit(e);
