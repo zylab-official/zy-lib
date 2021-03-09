@@ -12,38 +12,45 @@
 
 @mixin disabled {
     &:disabled {
-        border: 1px solid #ccc;
-        background-color: white;
-        color: #ccc;
+        border: 1px solid #ccc !important;
+        background-color: white !important;
+        color: #ccc !important;
         cursor: default;
 
         &:hover,
         &:active {
-            background-color: #fff;
+            background-color: #fff !important;
         }
     }
 }
 
+%button-base {
+    height: 40px;
+    border: none;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    outline: none;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
+}
+
 :host {
+    font-size: 10px;
+
     .zy-button {
+        @extend %button-base;
+
         display: flex;
         justify-content: space-around;
         align-items: center;
         box-sizing: border-box;
         padding: 0 10px;
         width: 127px;
-        height: 40px;
-        border: none;
         border-radius: 5px;
         background-color: #efeeea;
         color: #757575;
-        line-height: 1;
-        font-weight: bold;
-        font-size: 13px;
-        text-align: center;
-        transition: background-color 0.15s ease-in-out;
-        outline: none;
-        cursor: pointer;
 
         @include zy-button-bgc-feedback(#efeeea);
         @include disabled;
@@ -61,7 +68,7 @@
         &.is-round {
             width: 40px;
             border-radius: 50%;
-            font-size: 14px;
+            font-size: 1.4em;
 
             @include disabled;
         }
@@ -89,6 +96,48 @@
             &.is-accent {
                 background-color: transparent;
                 color: #2196f3;
+            }
+        }
+    }
+
+    .zy-split-button {
+        display: flex;
+        color: #757575;
+
+        &__left-part {
+            @extend %button-base;
+
+            padding: 0 10px;
+            width: 127px;
+            border-radius: 5px 0 0 5px;
+            background-color: #efeeea;
+            color: inherit;
+            font-size: 1.3em;
+
+            @include zy-button-bgc-feedback(#efeeea);
+            @include disabled;
+        }
+
+        &__right-part {
+            @extend .zy-split-button__left-part;
+
+            width: 40px;
+            border-radius: 0 5px 5px 0;
+            border-left: 1px solid white;
+            font-size: 1.8em;
+        }
+
+        &.is-accent {
+            color: white;
+
+            .zy-split-button__left-part {
+                background-color: #2196f3;
+                @include zy-button-bgc-feedback(#2196f3, 3);
+            }
+
+            .zy-split-button__right-part {
+                background-color: #2196f3;
+                @include zy-button-bgc-feedback(#2196f3, 3);
             }
         }
     }

@@ -1,9 +1,32 @@
-<button
-    class="zy-button"
-    [ngClass]="{ 'is-accent': color === 'accent', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
-    (click)="clickHandler($event)"
-    [disabled]="isDisabled"
->
-    <ng-content select="[icon]"></ng-content>
-    <ng-content></ng-content>
-</button>
+<ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'split'" [ngTemplateOutlet]="SplitButton"></ng-container>
+    <ng-container *ngSwitchDefault [ngTemplateOutlet]="SimpleButton"></ng-container>
+</ng-container>
+
+<!-- Common Button -->
+<ng-template #SimpleButton>
+    <button
+        class="zy-button"
+        [ngClass]="{ 'is-accent': color === 'accent', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
+        (click)="clickHandler($event)"
+        [disabled]="isDisabled"
+    >
+        <ng-content select="[icon]"></ng-content>
+        <ng-content></ng-content>
+    </button>
+</ng-template>
+<!-- /Common Button -->
+
+<!-- Split Button -->
+<ng-template #SplitButton>
+<div class="zy-split-button" [ngClass]="{ 'is-accent': color === 'accent' }">
+    <button class="zy-split-button__left-part" (click)="clickHandler($event)" [disabled]="isDisabled">
+        <ng-content select="[split-text]"></ng-content>
+    </button>
+    <button class="zy-split-button__right-part" (click)="selectHandler($event)" [disabled]="isDisabled">
+        <ng-container *ngIf="isSplitClosed">&#9662;</ng-container>
+        <ng-container *ngIf="!isSplitClosed">&#9652;</ng-container>
+    </button>
+</div>
+</ng-template>
+<!-- /Split Button -->

@@ -35,11 +35,18 @@ export class ButtonComponent {
 
     @Output() onClick: EventEmitter<Event> = new EventEmitter();
 
+    isSplitClosed = true;
+
     private _buttonType: ButtonType = 'default';
     private _buttonColor: ButtonColor = 'default';
     private _disabled = false;
 
     clickHandler(e: Event): void {
         this.onClick.emit(e);
+    }
+
+    selectHandler(e: Event): void {
+        this.isSplitClosed = !this.isSplitClosed;
+        console.log('select click')
     }
 }
