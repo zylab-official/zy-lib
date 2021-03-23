@@ -25,6 +25,7 @@
 }
 
 %button-base {
+    display: inline-block;
     height: 40px;
     border: none;
     line-height: 1;
@@ -54,6 +55,10 @@
 
         @include zy-button-bgc-feedback(#efeeea);
         @include disabled;
+
+        &__wrapper {
+            display: flex;
+        }
 
         // Coloring
         &.is-accent {
@@ -101,8 +106,14 @@
     }
 
     .zy-split-button {
-        display: flex;
+        position: relative;
+        z-index: 20;
+        display: inline-block;
         color: #757575;
+
+        &__wrapper {
+            display: flex;
+        }
 
         &__left-part {
             @extend %button-base;
@@ -138,6 +149,35 @@
             .zy-split-button__right-part {
                 background-color: #2196f3;
                 @include zy-button-bgc-feedback(#2196f3, 3);
+            }
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            z-index: 10;
+            margin-top: -10px;
+            width: 100%;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1.3em;
+            line-height: 1;
+            transform: translateY(-10px);
+            transition: transform .45s .1s ease-in-out;
+
+            &.is-opening {
+                transform: translateY(10px);
+            }
+
+            &__item {
+                padding: 10px 5px;
+            }
+
+            .item {
+                &__title {
+                    margin: 0;
+                }
             }
         }
     }

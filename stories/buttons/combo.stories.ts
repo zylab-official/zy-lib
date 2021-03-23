@@ -22,7 +22,7 @@ export const actionsData = {
     onClickTask: action('Click!'),
 };
 
-export const Default = () => ({
+export const DefaultWithoutSubItems = () => ({
     template: `
         <zy-button
             type="split"
@@ -37,7 +37,7 @@ export const Default = () => ({
     },
 });
 
-export const Primary = () => ({
+export const PrimaryWithoutSubItems = () => ({
     template: `
         <zy-button
             type="split"
@@ -52,12 +52,61 @@ export const Primary = () => ({
     },
 });
 
-
-export const Disabled = () => ({
+export const DisabledWithoutSubItems = () => ({
     template: `
         <zy-button
             type="split"
             color="accent"
+            (onClick)="onClick($event)"
+            disabled="true"
+        >
+            <ng-container split-text>Primary Action</ng-container>
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+
+export const DefaultWitSubItems = () => ({
+    template: `
+        <zy-button
+            type="split"
+            color="default"
+            [items]="[{title: 'Test'}]"
+            (onClick)="onClick($event)"
+        >
+            <ng-container split-text>Default</ng-container>
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const PrimaryWithSubItems = () => ({
+    template: `
+        <zy-button
+            type="split"
+            color="accent"
+            [items]="[{title: 'Test'}]"
+            (onClick)="onClick($event)"
+        >
+            <ng-container split-text>Primary Action</ng-container>
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const DisabledWithSubItems = () => ({
+    template: `
+        <zy-button
+            type="split"
+            color="accent"
+            [items]="[{title: 'Test'}]"
             (onClick)="onClick($event)"
             disabled="true"
         >

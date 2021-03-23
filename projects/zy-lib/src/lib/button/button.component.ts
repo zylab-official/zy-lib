@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonColor, ButtonType } from './button-settings';
+import { SplitButtonItem } from './models/split-button-item';
 
 @Component({
     selector: 'zy-button',
@@ -32,6 +33,8 @@ export class ButtonComponent {
     set isDisabled(value: boolean) {
         this._disabled = value;
     }
+
+    @Input() items: SplitButtonItem[] = [];
 
     @Output() onClick: EventEmitter<Event> = new EventEmitter();
 
