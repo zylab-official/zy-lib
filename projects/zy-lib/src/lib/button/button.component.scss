@@ -172,6 +172,13 @@
 
             &__item {
                 padding: 10px 5px;
+                background-color: #fff;
+                transition: background-color .15s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(#ccc, .56);
+                }
             }
 
             .item {

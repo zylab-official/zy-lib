@@ -74,7 +74,7 @@ export const DefaultWitSubItems = () => ({
         <zy-button
             type="split"
             color="default"
-            [items]="[{title: 'Test'}]"
+            [items]="[{title: 'Test 1'}, {title: 'Test 2'}]"
             (onClick)="onClick($event)"
         >
             <ng-container split-text>Default</ng-container>
@@ -90,7 +90,7 @@ export const PrimaryWithSubItems = () => ({
         <zy-button
             type="split"
             color="accent"
-            [items]="[{title: 'Test'}]"
+            [items]="[{title: 'Test 1'}, {title: 'Test 2'}]"
             (onClick)="onClick($event)"
         >
             <ng-container split-text>Primary Action</ng-container>
@@ -106,7 +106,7 @@ export const DisabledWithSubItems = () => ({
         <zy-button
             type="split"
             color="accent"
-            [items]="[{title: 'Test'}]"
+            [items]="[{title: 'Test 1'}, {title: 'Test 2'}]"
             (onClick)="onClick($event)"
             disabled="true"
         >
