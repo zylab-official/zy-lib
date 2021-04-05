@@ -12,8 +12,13 @@
         [disabled]="isDisabled"
     >
         <span class="zy-button__wrapper">
-            <ng-content select="[icon]"></ng-content>
-            <ng-content></ng-content>
+            <ng-content select="[icon]" *ngIf="!isLoading; else loading"></ng-content>
+            <ng-template #loading>
+                <zy-loader [color]="color"></zy-loader>
+            </ng-template>
+            <span class="title">
+                <ng-content></ng-content>
+            </span>
         </span>
     </button>
 </ng-template>
@@ -32,9 +37,10 @@
         </button>
     </div>
     <ng-container *ngIf="items.length && !isSplitClosed">
-        <div class="sub-menu" [class.is-opening]="!isSplitClosed">
+        <!-- <div class="sub-menu" [class.is-opening]="!isSplitClosed"> -->
+        <div class="sub-menu">
             <div *ngFor="let item of items" class="sub-menu__item item">
-                <p class="item__title">{{ item.title }}</p>
+                <button class="item__button" [disabled]="item.isDisabled || !item.onClick" (click)="item.onClick && item.onClick!($event); selectHandler($event, true)">{{ item.title }}</button>
             </div>
         </div>
     </ng-container>

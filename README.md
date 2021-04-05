@@ -14,6 +14,7 @@
 - https://angular.io/guide/creating-libraries
 - https://www.learnstorybook.com/design-systems-for-developers
 - https://www.learnstorybook.com/intro-to-storybook/angular/en/simple-component/
+- https://storybook.js.org/tutorials/intro-to-storybook/angular/en/get-started/
 
 ## Addons
 

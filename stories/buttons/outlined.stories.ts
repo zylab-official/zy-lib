@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
 import { ButtonComponent } from 'projects/zy-lib/src/lib/button/button.component';
+import { LoaderComponent } from 'projects/zy-lib/src/public-api';
 
 export default {
     title: 'Buttons/Outlined',
@@ -12,14 +13,14 @@ export default {
     decorators: [
         moduleMetadata({
             // imports both components to allow component composition with storybook
-            declarations: [ButtonComponent],
+            declarations: [ButtonComponent, LoaderComponent],
             imports: [CommonModule],
         }),
     ],
 };
 
 export const actionsData = {
-    onClickTask: action('Click!'),
+    onClickTask: action('Click outline button!'),
 };
 
 export const Default = () => ({
@@ -59,8 +60,7 @@ export const WithIcon = () => ({
             color="accent"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>&nbsp;
-            With Icon
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {

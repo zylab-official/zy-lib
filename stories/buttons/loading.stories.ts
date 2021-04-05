@@ -5,7 +5,7 @@ import { ButtonComponent } from 'projects/zy-lib/src/lib/button/button.component
 import { LoaderComponent } from 'projects/zy-lib/src/public-api';
 
 export default {
-    title: 'Buttons/Priority',
+    title: 'Buttons/Loading',
     parameters: {
         notes: 'Buttons are categorized by importance and can be applied of variety of HTML nodes. Each variantion has intention and should be used sparingly',
     },
@@ -28,10 +28,9 @@ export const Default = () => ({
         <zy-button
             type="default"
             color="default"
+            [isLoading]="true"
             (onClick)="onClick($event)"
-        >
-            Default
-        </zy-button>
+        >Default</zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask
@@ -43,40 +42,9 @@ export const Primary = () => ({
         <zy-button
             type="default"
             color="accent"
+            [isLoading]="true"
             (onClick)="onClick($event)"
-        >
-            Primary Action
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const WithIcon = () => ({
-    template: `
-        <zy-button
-            type="default"
-            color="accent"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>With Icon
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const Rounded = () => ({
-    template: `
-        <zy-button
-            type="round"
-            color="accent"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>
-        </zy-button>
+        >Primary Action</zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask

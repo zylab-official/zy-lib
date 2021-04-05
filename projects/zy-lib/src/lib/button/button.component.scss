@@ -58,6 +58,7 @@
 
         &__wrapper {
             display: flex;
+            align-items: center;
         }
 
         // Coloring
@@ -76,6 +77,13 @@
             font-size: 1.4em;
 
             @include disabled;
+
+            ::ng-deep [icon],
+            ::ng-deep zy-loader {
+                & + .title {
+                    margin-left: 0;
+                }
+            }
         }
 
         &.is-outlined {
@@ -98,9 +106,35 @@
 
             background-color: transparent;
 
+            .title,
+            ::ng-deep [icon] {
+                transition: color .15s ease-in-out;
+            }
+
             &.is-accent {
                 background-color: transparent;
                 color: #2196f3;
+
+                &:hover {
+                    .title,
+                    ::ng-deep [icon] {
+                        color: darken(#2196f3, 10%);
+                    }
+                }
+            }
+
+            &:hover {
+                .title,
+                ::ng-deep [icon] {
+                    color: darken(#757575, 10%);
+                }
+            }
+        }
+
+        ::ng-deep [icon],
+        ::ng-deep zy-loader {
+            & + .title {
+                margin-left: 10px;
             }
         }
     }
@@ -112,7 +146,10 @@
         color: #757575;
 
         &__wrapper {
+            position: relative;
+            z-index: 30;
             display: flex;
+            align-items: center;
         }
 
         &__left-part {
@@ -156,6 +193,7 @@
             position: absolute;
             top: 100%;
             z-index: 10;
+            box-sizing: border-box;
             margin-top: -10px;
             width: 100%;
             color: black;
@@ -163,27 +201,52 @@
             border-radius: 3px;
             font-size: 1.3em;
             line-height: 1;
-            transform: translateY(-10px);
-            transition: transform .45s .1s ease-in-out;
+            transform: translateY(-7px);
+            opacity: 0.45;
+            transition: all 0.15s ease-in-out;
 
             &.is-opening {
-                transform: translateY(10px);
+                transform: translateY(7px);
+                opacity: 1;
             }
 
             &__item {
-                padding: 10px 5px;
                 background-color: #fff;
-                transition: background-color .15s ease-in-out;
-                cursor: pointer;
+                border-bottom: 1px solid #ccc;
 
-                &:hover {
-                    background-color: rgba(#ccc, .56);
+                &:last-child {
+                    border-bottom: none;
                 }
             }
 
             .item {
-                &__title {
+                &__button {
+                    display: block;
+                    padding: 10px 5px;
                     margin: 0;
+                    width: 100%;
+                    background: none;
+                    background-color: #fff;
+                    border: none;
+                    transition: background-color 0.15s ease-in-out;
+                    outline: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(#ccc, 0.56);
+                    }
+
+                    &:active {
+                        background-color: darken(#ccc, 0.5%);
+                    }
+
+                    &[disabled] {
+                        cursor: default;
+
+                        &:hover {
+                            background-color: #fff;
+                        }
+                    }
                 }
             }
         }

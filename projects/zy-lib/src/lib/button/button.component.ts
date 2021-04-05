@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonColor, ButtonType } from './button-settings';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Color } from '../shared/color-types';
+import { ButtonType } from './button-settings';
 import { SplitButtonItem } from './models/split-button-item';
 
 @Component({
@@ -19,10 +20,10 @@ export class ButtonComponent {
     };
 
     @Input()
-    get color(): ButtonColor {
+    get color(): Color {
         return this._buttonColor;
     }
-    set color(value: ButtonColor) {
+    set color(value: Color) {
         this._buttonColor = value;
     };
 
@@ -36,20 +37,49 @@ export class ButtonComponent {
 
     @Input() items: SplitButtonItem[] = [];
 
+    @Input() isLoading: boolean = false;
+
     @Output() onClick: EventEmitter<Event> = new EventEmitter();
+
+    @HostListener('document:click', ['$event'])
+    DocumentClick(event: Event) {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            this.selectHandler(event, true);
+        }
+    }
 
     isSplitClosed = true;
 
     private _buttonType: ButtonType = 'default';
-    private _buttonColor: ButtonColor = 'default';
+    private _buttonColor: Color = 'default';
     private _disabled = false;
+    private _animationTimer: any;
+
+    constructor(
+        private elementRef: ElementRef
+    ) { }
 
     clickHandler(e: Event): void {
+        if (this.isLoading) return;
+
+        if (this.type === 'split') {
+            this.selectHandler(e, true);
+        }
+
         this.onClick.emit(e);
     }
 
-    selectHandler(e: Event): void {
-        this.isSplitClosed = !this.isSplitClosed;
-        console.log('select click')
+    selectHandler(e: Event, close?: boolean): void {
+        this.isSplitClosed = close || !this.isSplitClosed;
+
+        if (!this.isSplitClosed) this.animateSubMenu();
+    }
+
+    private animateSubMenu(): void {
+        if (this._animationTimer) clearTimeout(this._animationTimer);
+
+        this._animationTimer = setTimeout(() => {
+            this.elementRef.nativeElement.querySelector('.sub-menu')?.classList.add('is-opening');
+        }, 0);
     }
 }
