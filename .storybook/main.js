@@ -8,6 +8,8 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-notes/register',
-    '@storybook/addon-controls'
+    '@storybook/addon-controls',
+    '@storybook/addon-docs',
+    'storybook-addon-xd-designs/register'
   ]
 }

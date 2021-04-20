@@ -739,6 +739,14 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/buttons/custom.stories.ts",
+                "type": "object",
+                "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/buttons/disabled.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click disabled button!'),\r\n}"
@@ -774,6 +782,14 @@
                 "file": "stories/buttons/priority.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+            },
+            {
+                "name": "Button",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/buttons/custom.stories.ts",
+                "type": "",
+                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask,\r\n        ...args\r\n    }\r\n})"
             },
             {
                 "name": "Checked",
@@ -1078,6 +1094,24 @@
                     "file": "stories/buttons/combo.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"split\"\r\n            color=\"accent\"\r\n            [items]=\"[{title: 'Test 1', onClick: onItemClick}, {title: 'Test 2', onClick: onItemClick}]\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <ng-container split-text>Primary Action</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask,\r\n        onItemClick: actionsData.onClickItem\r\n    },\r\n})"
+                }
+            ],
+            "stories/buttons/custom.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/custom.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+                },
+                {
+                    "name": "Button",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/buttons/custom.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask,\r\n        ...args\r\n    }\r\n})"
                 }
             ],
             "stories/buttons/disabled.stories.ts": [
@@ -1500,6 +1534,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "PrimaryWithSubItemsAndCallback",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/custom.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/buttons/custom.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Button",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

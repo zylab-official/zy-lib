@@ -7,6 +7,10 @@ import { LoaderComponent } from 'projects/zy-lib/src/public-api';
 export default {
     title: 'Buttons/Combo (Split)',
     parameters: {
+        design: {
+            // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
+            reviewUrl: "https://xd.adobe.com/view/1e4dbe48-b50b-455f-4b0f-bd81f411dfe4-687c/"
+        },
         notes: 'Buttons are categorized by importance and can be applied of variety of HTML nodes. Each variantion has intention and should be used sparingly',
     },
     excludeStories: /.*Data$/,
