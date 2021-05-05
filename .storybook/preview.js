@@ -7,4 +7,6 @@ setCompodocJson(docJson);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  // https://github.com/grafana/grafana/issues/27763
+  previewTabs: {},
 }

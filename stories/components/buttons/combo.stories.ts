@@ -3,8 +3,10 @@ import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
 import { ButtonComponent } from 'projects/zy-lib/src/lib/button/button.component';
 import { LoaderComponent } from 'projects/zy-lib/src/public-api';
+import { baseSettings } from 'stories/shared/basic-storries-settings';
 
 export default {
+    ...baseSettings,
     title: 'Buttons/Combo (Split)',
     parameters: {
         design: {
@@ -13,7 +15,6 @@ export default {
         },
         notes: 'Buttons are categorized by importance and can be applied of variety of HTML nodes. Each variantion has intention and should be used sparingly',
     },
-    excludeStories: /.*Data$/,
     decorators: [
         moduleMetadata({
             // imports both components to allow component composition with storybook
