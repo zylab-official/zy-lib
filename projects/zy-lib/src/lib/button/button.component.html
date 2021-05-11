@@ -37,7 +37,6 @@
         </button>
     </div>
     <ng-container *ngIf="items.length && !isSplitClosed">
-        <!-- <div class="sub-menu" [class.is-opening]="!isSplitClosed"> -->
         <div class="sub-menu">
             <div *ngFor="let item of items" class="sub-menu__item item">
                 <button class="item__button" [disabled]="item.isDisabled || !item.onClick" (click)="item.onClick && item.onClick!($event); selectHandler($event, true)">{{ item.title }}</button>
