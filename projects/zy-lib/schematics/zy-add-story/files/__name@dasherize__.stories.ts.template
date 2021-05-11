@@ -1,0 +1,24 @@
+import { CommonModule } from '@angular/common';
+import { action } from '@storybook/addon-actions';
+import { moduleMetadata } from '@storybook/angular';
+import { baseSettings } from 'stories/shared/basic-storries-settings';
+
+export default {
+    ...baseSettings,
+    title: <%= classify(name) %> + `/Default`,
+    parameters: {
+        design: {
+            // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
+        },
+        notes: 'Add your components notes here',
+    },
+    decorators: [
+        moduleMetadata({
+            // imports both components to allow component composition with storybook
+            declarations: [
+                // Import component here
+            ],
+            imports: [CommonModule],
+        }),
+    ],
+};

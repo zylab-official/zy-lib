@@ -5,9 +5,8 @@
 - https://chekit.github.io/zy-lib/
 
 ## TODO
-- Add usefull components
 - Define schematics to easily add new story for component
-- Define schematics tio extend public-api
+- Define schematics to extend public-api
 
 ## Docs
 

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "zy-add-story": {
+      "description": "Add new story to the project.",
+      "factory": "./zy-add-story/index#addStory",
+      "schema": "./zy-add-story/schema.json"
+    }
+  }
+}
