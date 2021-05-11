@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prebuild:lib": "cd projects/zy-lib/ && npm version patch",
     "build:lib": "ng build zy-lib",
     "test": "ng test",
     "lint": "ng lint",

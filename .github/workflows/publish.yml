@@ -16,9 +16,6 @@ jobs:
       - name: Install and Build Library 🔧
         run: | # Install npm packages, increase version PATCH and build the library files
           npm install
-          cd projects/zy-lib/
-          npm version patch
-          cd ../../
           npm run build:lib
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
