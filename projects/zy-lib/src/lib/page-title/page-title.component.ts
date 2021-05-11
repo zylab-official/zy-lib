@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { Title } from '@angular/platform-browser';
 // import { ActivatedRoute } from '@angular/router';
 // import { ErrorDisplayService, PageTitle, PageTitleService } from 'app/core';
@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./page-title.component.scss']
 })
 export class PageTitleComponent /* implements OnInit, OnDestroy */ {
+    @Input() title: string;
     // @HostBinding('class.inactive') public inactive: boolean;
 
     // public title: string;

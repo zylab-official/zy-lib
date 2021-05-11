@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build zy-lib",
     "test": "ng test",
     "lint": "ng lint",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",

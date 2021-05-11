@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
-import { ButtonComponent } from 'projects/zy-lib/src/lib/button/button.component';
-import { LoaderComponent } from 'projects/zy-lib/src/public-api';
+import { ButtonModule } from 'projects/zy-lib/src/lib/button/button.module';
 import { baseSettings } from 'stories/shared/basic-storries-settings';
 
 export default {
@@ -18,8 +17,7 @@ export default {
     decorators: [
         moduleMetadata({
             // imports both components to allow component composition with storybook
-            declarations: [ButtonComponent, LoaderComponent],
-            imports: [CommonModule],
+            imports: [CommonModule, ButtonModule],
         }),
     ],
 };
@@ -49,7 +47,7 @@ export const Primary = () => ({
             color="accent"
             [isLoading]="true"
             (onClick)="onClick($event)"
-        >Primary Action</zy-button>
+        >Primary</zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask

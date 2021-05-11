@@ -10,7 +10,10 @@
 
 ## Docs
 
+### Angular Libraries 101
 - https://angular.io/guide/creating-libraries
+
+### Storubook 101
 - https://www.learnstorybook.com/design-systems-for-developers
 - https://www.learnstorybook.com/intro-to-storybook/angular/en/simple-component/
 - https://storybook.js.org/tutorials/intro-to-storybook/angular/en/get-started/
