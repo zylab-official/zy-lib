@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
-import { ButtonModule } from 'projects/zy-lib/src/lib/button/button.module';
+import { ButtonModule } from 'projects/zy-lib/src/public-api';
 import { baseSettings } from 'stories/shared/basic-storries-settings';
 
 export default {
