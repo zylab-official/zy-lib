@@ -6,7 +6,7 @@ import { baseSettings } from 'stories/shared/basic-storries-settings';
 
 export default {
     ...baseSettings,
-    title: 'Buttons/Customize',
+    title: 'Components/Buttons/Customize',
     parameters: {
         design: {
             // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs

@@ -42,7 +42,7 @@ export class CheckboxComponent implements OnDestroy {
     @Output() checkedChange = new EventEmitter<boolean>();
     @Output() onClick = new EventEmitter<MouseEvent>();
 
-    @ViewChild('checkbox') set checkboxRef(checkboxRef: ElementRef) {
+    @ViewChild('checkbox', { static: true }) set checkboxRef(checkboxRef: ElementRef) {
         this.checkbox = checkboxRef.nativeElement;
     }
 

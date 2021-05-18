@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from './button/button.module';
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxModule } from './checkbox/checkbox.module';
 import { PageTitleComponent } from './page-title/page-title.component';
 
-const components = [CheckboxComponent, PageTitleComponent]
+const components = [PageTitleComponent]
 
 @NgModule({
   declarations: components,
   imports: [
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ...components,
-    ButtonModule
+    ButtonModule,
+    CheckboxModule
   ]
 })
 export class ZyLibModule { }

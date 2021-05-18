@@ -1,10 +1,17 @@
-import { CheckboxComponent } from 'projects/zy-lib/src/public-api';
+import { moduleMetadata } from '@storybook/angular';
+import { CheckboxComponent, CheckboxModule } from 'projects/zy-lib/src/public-api';
 
 export default {
-    title: 'Form Elements/Checkbox',
+    title: 'Components/Form Elements/Checkbox',
     parameters: {
         notes: 'some documentation here',
     },
+    decorators: [
+        moduleMetadata({
+            // imports both components to allow component composition with storybook
+            imports: [CheckboxModule],
+        }),
+    ],
 };
 
 export const Unchecked = () => ({

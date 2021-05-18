@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Color } from '../shared/color-types';
+import { Color } from '../button/models/color.types';
 
 @Component({
     selector: 'zy-loader',

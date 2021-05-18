@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
-import { ButtonComponent } from 'projects/zy-lib/src/lib/button/button.component';
-import { ButtonModule, LoaderComponent } from 'projects/zy-lib/src/public-api';
+import { ButtonModule } from 'projects/zy-lib/src/public-api';
 import { baseSettings } from 'stories/shared/basic-storries-settings';
 
 export default {
     ...baseSettings,
-    title: 'Buttons/Disabled',
+    title: 'Components/Buttons/Disabled',
     parameters: {
         design: {
             // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
