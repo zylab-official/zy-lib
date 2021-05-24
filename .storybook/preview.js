@@ -6,8 +6,32 @@ import '!style-loader!css-loader!sass-loader!./../projects/zy-lib/src/styles/sty
 
 setCompodocJson(docJson);
 
+// Desing Tokens Addon Settings
+const tokenContext = require.context(
+  '!!raw-loader!../projects/zy-lib/src',
+  true,
+  /.\.(css|less|scss|svg)$/
+);
+
+const tokenFiles = tokenContext.keys().map(function (filename) {
+  return {
+    filename,
+    content: tokenContext(filename).default
+  };
+});
+
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: {
+    argTypesRegex: "^on[A-Z].*"
+  },
   // https://github.com/grafana/grafana/issues/27763
-  previewTabs: {},
+  previewTabs: {
+    canvas: {
+      title: 'Preview',
+      hidden: false,
+    },
+  },
+  designToken: {
+    files: tokenFiles,
+  }
 }

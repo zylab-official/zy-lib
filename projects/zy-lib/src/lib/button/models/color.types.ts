@@ -1,1 +1,1 @@
-export type Color = 'default' | 'accent';
+export type Color = 'default' | 'primary';

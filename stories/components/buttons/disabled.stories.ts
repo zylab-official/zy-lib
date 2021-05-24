@@ -12,7 +12,6 @@ export default {
             // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
             reviewUrl: "https://xd.adobe.com/view/1e4dbe48-b50b-455f-4b0f-bd81f411dfe4-687c/"
         },
-        notes: 'Buttons are categorized by importance and can be applied of variety of HTML nodes. Each variantion has intention and should be used sparingly',
     },
     decorators: [
         moduleMetadata({
@@ -46,7 +45,7 @@ export const Primary = () => ({
     template: `
         <zy-button
             type="default"
-            color="accent"
+            color="primary"
             (onClick)="onClick($event)"
             disabled="true"
         >
@@ -62,7 +61,7 @@ export const WithIcon = () => ({
     template: `
         <zy-button
             type="default"
-            color="accent"
+            color="primary"
             (onClick)="onClick($event)"
             disabled="true"
         >
@@ -78,7 +77,7 @@ export const Rounded = () => ({
     template: `
         <zy-button
             type="round"
-            color="accent"
+            color="primary"
             (onClick)="onClick($event)"
             disabled="true"
         >

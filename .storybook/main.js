@@ -7,9 +7,10 @@ module.exports = {
     "@storybook/addon-essentials",
     '@storybook/addon-actions',
     '@storybook/addon-links',
-    '@storybook/addon-notes/register',
+    // '@storybook/addon-notes/register',
     '@storybook/addon-controls',
     '@storybook/addon-docs',
-    'storybook-addon-xd-designs/register'
+    'storybook-addon-xd-designs/register',
+    'storybook-design-token',
   ]
 }

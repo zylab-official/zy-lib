@@ -7,7 +7,7 @@
 <ng-template #SimpleButton>
     <button
         class="zy-button"
-        [ngClass]="{ 'is-accent': color === 'accent', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
+        [ngClass]="{ 'is-accent': color === 'primary', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
         (click)="clickHandler($event)"
         [disabled]="isDisabled"
     >
@@ -16,7 +16,7 @@
             <ng-template #loading>
                 <zy-loader [color]="color"></zy-loader>
             </ng-template>
-            <span class="title">
+            <span *ngIf="type !== 'round'" class="title">
                 <ng-content></ng-content>
             </span>
         </span>
@@ -26,23 +26,23 @@
 
 <!-- Split Button -->
 <ng-template #SplitButton>
-<div class="zy-split-button" [ngClass]="{ 'is-accent': color === 'accent' }">
-    <div class="zy-split-button__wrapper">
-        <button class="zy-split-button__left-part" (click)="clickHandler($event)" [disabled]="isDisabled">
-            <ng-content select="[split-text]"></ng-content>
-        </button>
-        <button class="zy-split-button__right-part" (click)="selectHandler($event)" [disabled]="isDisabled || !items.length">
-            <ng-container *ngIf="isSplitClosed">&#9662;</ng-container>
-            <ng-container *ngIf="!isSplitClosed">&#9652;</ng-container>
-        </button>
-    </div>
-    <ng-container *ngIf="items.length && !isSplitClosed">
-        <div class="sub-menu">
-            <div *ngFor="let item of items" class="sub-menu__item item">
-                <button class="item__button" [disabled]="item.isDisabled || !item.onClick" (click)="item.onClick && item.onClick!($event); selectHandler($event, true)">{{ item.title }}</button>
-            </div>
+    <div class="zy-split-button" [ngClass]="{ 'is-accent': color === 'primary' }">
+        <div class="zy-split-button__wrapper">
+            <button class="zy-split-button__left-part" (click)="clickHandler($event)" [disabled]="isDisabled">
+                <ng-content select="[split-text]"></ng-content>
+            </button>
+            <button class="zy-split-button__right-part" (click)="selectHandler($event)" [disabled]="isDisabled || !items.length">
+                <ng-container *ngIf="isSplitClosed">&#9662;</ng-container>
+                <ng-container *ngIf="!isSplitClosed">&#9652;</ng-container>
+            </button>
         </div>
-    </ng-container>
-</div>
+        <ng-container *ngIf="items.length && !isSplitClosed">
+            <div class="sub-menu">
+                <div *ngFor="let item of items" class="sub-menu__item item">
+                    <button class="item__button" [disabled]="item.isDisabled || !item.onClick" (click)="item.onClick && item.onClick!($event); selectHandler($event, true)">{{ item.title }}</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
 </ng-template>
 <!-- /Split Button -->

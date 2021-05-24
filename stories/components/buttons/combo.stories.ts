@@ -12,7 +12,6 @@ export default {
             // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
             reviewUrl: "https://xd.adobe.com/view/1e4dbe48-b50b-455f-4b0f-bd81f411dfe4-687c/"
         },
-        notes: 'Buttons are categorized by importance and can be applied of variety of HTML nodes. Each variantion has intention and should be used sparingly',
     },
     decorators: [
         moduleMetadata({
@@ -46,7 +45,7 @@ export const PrimaryWithoutSubItems = () => ({
     template: `
         <zy-button
             type="split"
-            color="accent"
+            color="primary"
             (onClick)="onClick($event)"
         >
             <ng-container split-text>Primary Action</ng-container>
@@ -78,7 +77,7 @@ export const PrimaryWithSubItemsAndCallback = () => ({
     template: `
         <zy-button
             type="split"
-            color="accent"
+            color="primary"
             [items]="[{title: 'Test 1', onClick: onItemClick}, {title: 'Test 2', onClick: onItemClick}]"
             (onClick)="onClick($event)"
         >
@@ -95,7 +94,7 @@ export const Disabled = () => ({
     template: `
         <zy-button
             type="split"
-            color="accent"
+            color="primary"
             [items]="[{title: 'Test 1'}, {title: 'Test 2'}]"
             (onClick)="onClick($event)"
             disabled="true"
