@@ -7,7 +7,7 @@
 <ng-template #SimpleButton>
     <button
         class="zy-button"
-        [ngClass]="{ 'is-accent': color === 'primary', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
+        [ngClass]="{ 'is-primary': color === 'primary', 'is-round': type === 'round', 'is-outlined': type === 'outlined', 'is-ghost': type === 'ghost' }"
         (click)="clickHandler($event)"
         [disabled]="isDisabled"
     >
@@ -26,7 +26,7 @@
 
 <!-- Split Button -->
 <ng-template #SplitButton>
-    <div class="zy-split-button" [ngClass]="{ 'is-accent': color === 'primary' }">
+    <div class="zy-split-button" [ngClass]="{ 'is-primary': color === 'primary' }">
         <div class="zy-split-button__wrapper">
             <button class="zy-split-button__left-part" (click)="clickHandler($event)" [disabled]="isDisabled">
                 <ng-content select="[split-text]"></ng-content>

@@ -4,7 +4,7 @@ import { Color } from '../button/models/color.types';
 @Component({
     selector: 'zy-loader',
     template: `
-        <span class="loader" [class.is-accent]="color === 'accent'">
+        <span class="loader" [class.is-primary]="color === 'primary'">
             <span></span>
             <span></span>
             <span></span>
