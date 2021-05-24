@@ -1,7 +1,7 @@
 import { ElementRef, EventEmitter } from '@angular/core';
-import { Color } from '../shared/color-types';
-import { ButtonType } from './button-settings';
-import { SplitButtonItem } from './models/split-button-item';
+import { Color } from './models/color.types';
+import { ButtonType } from './models/button.types';
+import { SplitButtonItem } from './models/split-button-item.interface';
 import * as i0 from "@angular/core";
 export declare class ButtonComponent {
     private elementRef;

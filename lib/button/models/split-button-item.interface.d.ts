@@ -3,4 +3,4 @@ export interface SplitButtonItem {
     onClick?: (event: Event) => any;
     isDisabled?: boolean;
 }
-//# sourceMappingURL=split-button-item.d.ts.map
+//# sourceMappingURL=split-button-item.interface.d.ts.map

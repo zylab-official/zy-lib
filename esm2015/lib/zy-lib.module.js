@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from './button/button.module';
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxModule } from './checkbox/checkbox.module';
 import { PageTitleComponent } from './page-title/page-title.component';
 import * as i0 from "@angular/core";
-const components = [CheckboxComponent, PageTitleComponent];
+const components = [PageTitleComponent];
 export class ZyLibModule {
 }
 ZyLibModule.ɵmod = i0.ɵɵdefineNgModule({ type: ZyLibModule });
 ZyLibModule.ɵinj = i0.ɵɵdefineInjector({ factory: function ZyLibModule_Factory(t) { return new (t || ZyLibModule)(); }, imports: [[
             ButtonModule,
             FormsModule,
-        ], ButtonModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(ZyLibModule, { declarations: [CheckboxComponent, PageTitleComponent], imports: [ButtonModule,
-        FormsModule], exports: [CheckboxComponent, PageTitleComponent, ButtonModule] }); })();
+            ReactiveFormsModule
+        ], ButtonModule,
+        CheckboxModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(ZyLibModule, { declarations: [PageTitleComponent], imports: [ButtonModule,
+        FormsModule,
+        ReactiveFormsModule], exports: [PageTitleComponent, ButtonModule,
+        CheckboxModule] }); })();
 /*@__PURE__*/ (function () { i0.ɵsetClassMetadata(ZyLibModule, [{
         type: NgModule,
         args: [{
@@ -21,11 +25,13 @@ ZyLibModule.ɵinj = i0.ɵɵdefineInjector({ factory: function ZyLibModule_Factor
                 imports: [
                     ButtonModule,
                     FormsModule,
+                    ReactiveFormsModule
                 ],
                 exports: [
                     ...components,
-                    ButtonModule
+                    ButtonModule,
+                    CheckboxModule
                 ]
             }]
     }], null, null); })();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoienktbGliLm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL3p5LWxpYi9zcmMvbGliL3p5LWxpYi5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN6QyxPQUFPLEVBQUUsV0FBVyxFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFDN0MsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLHdCQUF3QixDQUFDO0FBQ3RELE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBQ2xFLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDOztBQUV2RSxNQUFNLFVBQVUsR0FBRyxDQUFDLGlCQUFpQixFQUFFLGtCQUFrQixDQUFDLENBQUE7QUFhMUQsTUFBTSxPQUFPLFdBQVc7OytDQUFYLFdBQVc7cUdBQVgsV0FBVyxrQkFUYjtZQUNQLFlBQVk7WUFDWixXQUFXO1NBQ1osRUFHQyxZQUFZO3dGQUdILFdBQVcsbUJBYkosaUJBQWlCLEVBQUUsa0JBQWtCLGFBS3JELFlBQVk7UUFDWixXQUFXLGFBTkssaUJBQWlCLEVBQUUsa0JBQWtCLEVBVXJELFlBQVk7a0RBR0gsV0FBVztjQVh2QixRQUFRO2VBQUM7Z0JBQ1IsWUFBWSxFQUFFLFVBQVU7Z0JBQ3hCLE9BQU8sRUFBRTtvQkFDUCxZQUFZO29CQUNaLFdBQVc7aUJBQ1o7Z0JBQ0QsT0FBTyxFQUFFO29CQUNQLEdBQUcsVUFBVTtvQkFDYixZQUFZO2lCQUNiO2FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRm9ybXNNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9mb3Jtcyc7XG5pbXBvcnQgeyBCdXR0b25Nb2R1bGUgfSBmcm9tICcuL2J1dHRvbi9idXR0b24ubW9kdWxlJztcbmltcG9ydCB7IENoZWNrYm94Q29tcG9uZW50IH0gZnJvbSAnLi9jaGVja2JveC9jaGVja2JveC5jb21wb25lbnQnO1xuaW1wb3J0IHsgUGFnZVRpdGxlQ29tcG9uZW50IH0gZnJvbSAnLi9wYWdlLXRpdGxlL3BhZ2UtdGl0bGUuY29tcG9uZW50JztcblxuY29uc3QgY29tcG9uZW50cyA9IFtDaGVja2JveENvbXBvbmVudCwgUGFnZVRpdGxlQ29tcG9uZW50XVxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IGNvbXBvbmVudHMsXG4gIGltcG9ydHM6IFtcbiAgICBCdXR0b25Nb2R1bGUsXG4gICAgRm9ybXNNb2R1bGUsXG4gIF0sXG4gIGV4cG9ydHM6IFtcbiAgICAuLi5jb21wb25lbnRzLFxuICAgIEJ1dHRvbk1vZHVsZVxuICBdXG59KVxuZXhwb3J0IGNsYXNzIFp5TGliTW9kdWxlIHsgfVxuIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoienktbGliLm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL3p5LWxpYi9zcmMvbGliL3p5LWxpYi5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN6QyxPQUFPLEVBQUUsV0FBVyxFQUFFLG1CQUFtQixFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFDbEUsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLHdCQUF3QixDQUFDO0FBQ3RELE9BQU8sRUFBRSxjQUFjLEVBQUUsTUFBTSw0QkFBNEIsQ0FBQztBQUM1RCxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSxtQ0FBbUMsQ0FBQzs7QUFFdkUsTUFBTSxVQUFVLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFBO0FBZXZDLE1BQU0sT0FBTyxXQUFXOzsrQ0FBWCxXQUFXO3FHQUFYLFdBQVcsa0JBWGI7WUFDUCxZQUFZO1lBQ1osV0FBVztZQUNYLG1CQUFtQjtTQUNwQixFQUdDLFlBQVk7UUFDWixjQUFjO3dGQUdMLFdBQVcsbUJBZkosa0JBQWtCLGFBS2xDLFlBQVk7UUFDWixXQUFXO1FBQ1gsbUJBQW1CLGFBUEgsa0JBQWtCLEVBV2xDLFlBQVk7UUFDWixjQUFjO2tEQUdMLFdBQVc7Y0FidkIsUUFBUTtlQUFDO2dCQUNSLFlBQVksRUFBRSxVQUFVO2dCQUN4QixPQUFPLEVBQUU7b0JBQ1AsWUFBWTtvQkFDWixXQUFXO29CQUNYLG1CQUFtQjtpQkFDcEI7Z0JBQ0QsT0FBTyxFQUFFO29CQUNQLEdBQUcsVUFBVTtvQkFDYixZQUFZO29CQUNaLGNBQWM7aUJBQ2Y7YUFDRiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBGb3Jtc01vZHVsZSwgUmVhY3RpdmVGb3Jtc01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2Zvcm1zJztcbmltcG9ydCB7IEJ1dHRvbk1vZHVsZSB9IGZyb20gJy4vYnV0dG9uL2J1dHRvbi5tb2R1bGUnO1xuaW1wb3J0IHsgQ2hlY2tib3hNb2R1bGUgfSBmcm9tICcuL2NoZWNrYm94L2NoZWNrYm94Lm1vZHVsZSc7XG5pbXBvcnQgeyBQYWdlVGl0bGVDb21wb25lbnQgfSBmcm9tICcuL3BhZ2UtdGl0bGUvcGFnZS10aXRsZS5jb21wb25lbnQnO1xuXG5jb25zdCBjb21wb25lbnRzID0gW1BhZ2VUaXRsZUNvbXBvbmVudF1cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBjb21wb25lbnRzLFxuICBpbXBvcnRzOiBbXG4gICAgQnV0dG9uTW9kdWxlLFxuICAgIEZvcm1zTW9kdWxlLFxuICAgIFJlYWN0aXZlRm9ybXNNb2R1bGVcbiAgXSxcbiAgZXhwb3J0czogW1xuICAgIC4uLmNvbXBvbmVudHMsXG4gICAgQnV0dG9uTW9kdWxlLFxuICAgIENoZWNrYm94TW9kdWxlXG4gIF1cbn0pXG5leHBvcnQgY2xhc3MgWnlMaWJNb2R1bGUgeyB9XG4iXX0=
