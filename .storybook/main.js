@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addon-controls',
     '@storybook/addon-docs',
     'storybook-design-token',
-    '@geometricpanda/storybook-addon-badges'
+    '@geometricpanda/storybook-addon-badges',
+    'storybook-addon-xd-designs/register'
   ]
 }
