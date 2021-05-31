@@ -4,7 +4,7 @@ import { CheckboxComponent, CheckboxModule } from 'projects/zy-lib/src/public-ap
 export default {
     title: 'Components/Form Elements/Checkbox',
     parameters: {
-        notes: 'some documentation here',
+        badges: ['inProgress']
     },
     decorators: [
         moduleMetadata({

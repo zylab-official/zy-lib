@@ -33,5 +33,22 @@ export const parameters = {
   },
   designToken: {
     files: tokenFiles,
+  },
+  badgesConfig: {
+    beta: {
+      contrast: '#FFF',
+      color: '#018786',
+      title: 'Beta'
+    },
+    deprecated: {
+      contrast: '#FFF',
+      color: '#6200EE',
+      title: 'Deprecated'
+    },
+    inProgress: {
+      contrast: '#FFF',
+      color: '#e6a544',
+      title: 'In Progress'
+    }
   }
 }

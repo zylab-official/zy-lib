@@ -8,10 +8,7 @@ export default {
     ...baseSettings,
     title: 'Components/Buttons/Ghost',
     parameters: {
-        design: {
-            // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
-            reviewUrl: "https://xd.adobe.com/view/1e4dbe48-b50b-455f-4b0f-bd81f411dfe4-687c/"
-        },
+        badges: ['beta']
     },
     decorators: [
         moduleMetadata({

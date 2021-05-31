@@ -3,21 +3,20 @@ import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
 import { ButtonModule } from 'projects/zy-lib/src/public-api';
 import { baseSettings } from 'stories/shared/basic-storries-settings';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
     ...baseSettings,
     title: 'Components/Buttons/Combo (Split)',
     parameters: {
-        design: {
-            // Available options see here: https://github.com/morgs32/storybook-addon-xd-designs
-            reviewUrl: "https://xd.adobe.com/view/1e4dbe48-b50b-455f-4b0f-bd81f411dfe4-687c/"
-        },
+        badges: ['beta']
     },
     decorators: [
         moduleMetadata({
             // imports both components to allow component composition with storybook
             imports: [CommonModule, ButtonModule],
         }),
+        withDesign
     ],
 };
 
