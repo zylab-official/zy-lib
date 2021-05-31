@@ -2,7 +2,7 @@
 
 ## GitHub Pages
 
-- https://chekit.github.io/zy-lib/
+- https://zylab-official.github.io/zy-lib/
 
 ## TODO
 - Define schematics to easily add new story for component
