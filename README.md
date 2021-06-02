@@ -24,6 +24,7 @@ ____
 - Split Design TOkens to separate pages
 - Unify button components
 - Fix Actions steps
+- Install Lib to Github Packages
 
 ## Basics
 
@@ -35,8 +36,11 @@ ____
 - https://www.learnstorybook.com/intro-to-storybook/angular/en/simple-component/
 - https://storybook.js.org/tutorials/intro-to-storybook/angular/en/get-started/
 
-## Udseful Addons
+### Design Systems
 
-### Adobe XD
-- https://github.com/morgs32/storybook-addon-xd-designs
-- https://storybook.js.org/addons/storybook-addon-xd-designs
+- https://medium.com/@nathanacurtis
+
+### References
+
+- https://www.lightningdesignsystem.com/
+- https://www.carbondesignsystem.com/
