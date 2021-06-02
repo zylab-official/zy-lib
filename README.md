@@ -2,6 +2,10 @@
 
 ![ZyLIB](./public/zylab-logo_small.svg)
 
+
+[![Build and Deploy Library](https://github.com/zylab-official/zy-lib/actions/workflows/publish.yml/badge.svg)](https://github.com/zylab-official/zy-lib/actions/workflows/publish.yml)
+[![Build and Deploy Storybook](https://github.com/zylab-official/zy-lib/actions/workflows/storybook.yml/badge.svg)](https://github.com/zylab-official/zy-lib/actions/workflows/storybook.yml)
+
 The **ZyLAB Design System** (ZDS) includes the resources to create user interfaces consistent with the internal design principles, design language, and best practices. Rather than focusing on pixels, developers can focus on application logic, while designers can focus on user experience, interactions, and flows.
 This Design System provides a range of resources for developers, which includes:
 
