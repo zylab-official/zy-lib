@@ -21,6 +21,46 @@ const tokenFiles = tokenContext.keys().map(function (filename) {
 });
 
 export const parameters = {
+  options: {
+    // https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy
+    storySort: {
+      order: [
+        'Getting Started',
+        'What\'s new',
+        'Components',
+        'Design Tokens',
+        // Nested stories
+        [
+          'Overview',
+          'Colors',
+          // Colors order is aligned with _colors.scss inside library
+          [
+            'Overview',
+            'Red',
+            'Pink',
+            'Purple',
+            'Deep Purple',
+            'Indigo',
+            'Blue',
+            'Light Blue',
+            'Cyan',
+            'Teal',
+            'Green',
+            'Light Green',
+            'Lime',
+            'Yellow',
+            'Amber',
+            'Orange',
+            'Deep Orange',
+            'Brown',
+            'Grey',
+            'Blue Grey',
+            'Additional'
+          ]
+        ],
+      ]
+    }
+  },
   actions: {
     argTypesRegex: "^on[A-Z].*"
   },
