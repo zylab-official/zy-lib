@@ -3,12 +3,12 @@ import { action } from '@storybook/addon-actions';
 import { moduleMetadata } from '@storybook/angular';
 import { ButtonModule } from 'projects/zy-lib/src/public-api';
 import { baseSettings } from 'stories/shared/basic-storries-settings';
-import { config, withXD } from 'storybook-addon-xd-designs';
+import { config } from 'storybook-addon-xd-designs';
 import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons/Combo (Split)',
+    title: 'Components/Buttons/With Icon',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -20,23 +20,21 @@ export default {
             // imports both components to allow component composition with storybook
             imports: [CommonModule, ButtonModule],
         }),
-        withXD
     ],
 };
 
 export const actionsData = {
-    onClickTask: action('Click main button!'),
-    onClickItem: action('Click item button!'),
+    onClickTask: action('Click priority button!'),
 };
 
-export const DefaultWithoutSubItems = () => ({
+export const Primary = () => ({
     template: `
         <zy-button
-            type="split"
-            color="default"
+            type="default"
+            color="primary"
             (onClick)="onClick($event)"
         >
-            <ng-container split-text>Default</ng-container>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
@@ -44,14 +42,15 @@ export const DefaultWithoutSubItems = () => ({
     },
 });
 
-export const PrimaryWithoutSubItems = () => ({
+
+export const Secondary = () => ({
     template: `
         <zy-button
-            type="split"
-            color="primary"
+            type="default"
+            color="default"
             (onClick)="onClick($event)"
         >
-            <ng-container split-text>Primary Action</ng-container>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
@@ -59,50 +58,75 @@ export const PrimaryWithoutSubItems = () => ({
     },
 });
 
-export const DefaultWitSubItemsAndOneCallback = () => ({
+export const OutlinedPrimary = () => ({
     template: `
         <zy-button
-            type="split"
-            color="default"
-            [items]="[{title: 'Test 1', onClick: onItemClick}, {title: 'Test 2'}]"
+            type="outlined"
+            color="primary"
             (onClick)="onClick($event)"
         >
-            <ng-container split-text>Default</ng-container>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
-        onClick: actionsData.onClickTask,
-        onItemClick: actionsData.onClickItem
+        onClick: actionsData.onClickTask
     },
 });
 
-export const PrimaryWithSubItemsAndCallback = () => ({
+export const OutlinedSecondary = () => ({
     template: `
         <zy-button
-            type="split"
-            color="primary"
-            [items]="[{title: 'Test 1', onClick: onItemClick}, {title: 'Test 2', onClick: onItemClick}]"
+            type="outlined"
+            color="default"
             (onClick)="onClick($event)"
         >
-            <ng-container split-text>Primary Action</ng-container>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
-        onClick: actionsData.onClickTask,
-        onItemClick: actionsData.onClickItem
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const GhostPrimary = () => ({
+    template: `
+        <zy-button
+            type="ghost"
+            color="primary"
+            (onClick)="onClick($event)"
+        >
+            <span icon>+</span>With Icon
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const GhostSecondary = () => ({
+    template: `
+        <zy-button
+            type="ghost"
+            color="default"
+            (onClick)="onClick($event)"
+        >
+            <span icon>+</span>With Icon
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
     },
 });
 
 export const Disabled = () => ({
     template: `
         <zy-button
-            type="split"
+            type="default"
             color="primary"
-            [items]="[{title: 'Test 1'}, {title: 'Test 2'}]"
             (onClick)="onClick($event)"
             disabled="true"
         >
-            <ng-container split-text>Primary Action</ng-container>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {

@@ -8,7 +8,7 @@ import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons/Customize',
+    title: 'Components/Buttons',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -59,7 +59,7 @@ export const actionsData = {
     onClickTask: action('Click priority button!'),
 };
 
-export const Button = (args: any) => ({
+export const Customize = (args: any) => ({
     template: `
         <zy-button
             [type]="type"

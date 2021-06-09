@@ -21,7 +21,6 @@ ____
 ## TODO
 - Define schematics to easily add new story for component
 - Define schematics to extend public-api
-- Split Design TOkens to separate pages
 - Unify button components
 - Fix Actions steps
 - Install Lib to Github Packages

@@ -28,6 +28,15 @@ export const parameters = {
         'Getting Started',
         'What\'s new',
         'Components',
+        [
+          'Buttons',
+          [
+            'Primary',
+            'Secondary',
+            'With Icon',
+            'Rounded'
+          ]
+        ],
         'Design Tokens',
         // Nested stories
         [
