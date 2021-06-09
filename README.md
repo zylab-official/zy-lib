@@ -25,6 +25,8 @@ ____
 - Fix Actions steps
 - Install Lib to Github Packages
 
+(!) Reorganize buttons: Type ---> Color
+
 ## Basics
 
 ### Angular Libraries 101
