@@ -8,7 +8,7 @@ import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons',
+    title: 'Components/Buttons/Customize/Button',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -35,7 +35,7 @@ export default {
             control: {
                 type: 'radio',
                 options: [
-                    'default', 'primary'
+                    'secondary', 'primary'
                 ]
             }
         },
@@ -61,6 +61,8 @@ export const actionsData = {
 
 export const Customize = (args: any) => ({
     template: `
+        <p>This story lets you to check all buttons settings inside Controls panel:</p>
+        <hr />
         <zy-button
             [type]="type"
             [color]="color"

@@ -1,0 +1,20 @@
+<div class="zy-split-button" [ngClass]="{ 'is-secondary': color === 'secondary' }">
+    <div class="zy-split-button__wrapper">
+        <button class="zy-split-button__left-part" (click)="clickHandler($event)" [disabled]="isDisabled">
+            <ng-content></ng-content>
+        </button>
+        <button class="zy-split-button__right-part" (click)="selectHandler($event)"
+            [disabled]="isDisabled || !items.length">
+            <ng-container *ngIf="isSplitClosed">&#9662;</ng-container>
+            <ng-container *ngIf="!isSplitClosed">&#9652;</ng-container>
+        </button>
+    </div>
+    <ng-container *ngIf="items.length && !isSplitClosed">
+        <div class="sub-menu">
+            <div *ngFor="let item of items" class="sub-menu__item item">
+                <button class="item__button" [disabled]="item.isDisabled || !item.onClick"
+                    (click)="item.onClick && item.onClick!($event); selectHandler($event, true)">{{ item.title }}</button>
+            </div>
+        </div>
+    </ng-container>
+</div>

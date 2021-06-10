@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from './button/button.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { PageTitleComponent } from './page-title/page-title.component';
+import { PageTitleModule } from './page-title/page-title.module';
+import { SplitButtonModule } from './split-button/split-button.module';
 
 const components = [PageTitleComponent]
 
@@ -10,13 +12,15 @@ const components = [PageTitleComponent]
   declarations: components,
   imports: [
     ButtonModule,
-    FormsModule,
-    ReactiveFormsModule
+    SplitButtonModule,
+    PageTitleModule,
+    CheckboxModule,
   ],
   exports: [
-    ...components,
     ButtonModule,
-    CheckboxModule
+    SplitButtonModule,
+    CheckboxModule,
+    PageTitleModule
   ]
 })
 export class ZyLibModule { }

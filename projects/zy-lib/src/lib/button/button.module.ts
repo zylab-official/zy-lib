@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LoaderComponent } from '../loader/loader.component';
+import { LoaderComponent } from '../shared/components/loader/loader.component';
 import { ButtonComponent } from './button.component';
 
 @NgModule({

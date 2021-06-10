@@ -8,7 +8,7 @@ import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons/With Icon',
+    title: 'Components/Buttons/Round',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -30,11 +30,11 @@ export const actionsData = {
 export const Primary = () => ({
     template: `
         <zy-button
-            type="default"
+            type="round"
             color="primary"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>With Icon
+            <span icon>+</span>
         </zy-button>
     `,
     props: {
@@ -42,15 +42,30 @@ export const Primary = () => ({
     },
 });
 
+export const PrimaryLoading = () => ({
+    template: `
+        <zy-button
+            type="round"
+            color="primary"
+            [isLoading]="true"
+            (onClick)="onClick($event)"
+        >
+            <span icon>+</span>
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
 
 export const Secondary = () => ({
     template: `
         <zy-button
-            type="default"
-            color="default"
+            type="round"
+            color="secondary"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>With Icon
+            <span icon>+</span>
         </zy-button>
     `,
     props: {
@@ -58,59 +73,15 @@ export const Secondary = () => ({
     },
 });
 
-export const OutlinedPrimary = () => ({
+export const SecondaryLoading = () => ({
     template: `
         <zy-button
-            type="outlined"
-            color="primary"
+            type="round"
+            color="secondary"
+            [isLoading]="true"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>With Icon
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const OutlinedSecondary = () => ({
-    template: `
-        <zy-button
-            type="outlined"
-            color="default"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>With Icon
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const GhostPrimary = () => ({
-    template: `
-        <zy-button
-            type="ghost"
-            color="primary"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>With Icon
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const GhostSecondary = () => ({
-    template: `
-        <zy-button
-            type="ghost"
-            color="default"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>With Icon
+            <span icon>+</span>
         </zy-button>
     `,
     props: {
@@ -121,12 +92,12 @@ export const GhostSecondary = () => ({
 export const Disabled = () => ({
     template: `
         <zy-button
-            type="default"
+            type="round"
             color="primary"
             (onClick)="onClick($event)"
             disabled="true"
         >
-            <span icon>+</span>With Icon
+            <span icon>+</span>
         </zy-button>
     `,
     props: {

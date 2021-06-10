@@ -31,10 +31,11 @@ export const parameters = {
         [
           'Buttons',
           [
-            'Primary',
-            'Secondary',
-            'With Icon',
-            'Rounded'
+            'Default',
+            'Outlined',
+            'Round',
+            'Ghost',
+            'Split Button'
           ]
         ],
         'Design Tokens',

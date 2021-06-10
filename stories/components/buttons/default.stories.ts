@@ -8,7 +8,7 @@ import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons/Secondary',
+    title: 'Components/Buttons/Default',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -28,14 +28,14 @@ export const actionsData = {
     onClickItem: action('Click item button!'),
 };
 
-export const Default = () => ({
+export const Primary = () => ({
     template: `
         <zy-button
             type="default"
-            color="default"
+            color="primary"
             (onClick)="onClick($event)"
         >
-            Secondary Button
+            Default Button
         </zy-button>
     `,
     props: {
@@ -43,14 +43,14 @@ export const Default = () => ({
     },
 });
 
-export const Outlined = () => ({
+export const PrimaryWithIcon = () => ({
     template: `
         <zy-button
-            type="outlined"
-            color="default"
+            type="default"
+            color="primary"
             (onClick)="onClick($event)"
         >
-            Secondary Button
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
@@ -58,29 +58,58 @@ export const Outlined = () => ({
     },
 });
 
-export const Loading = () => ({
+export const PrimaryLoading = () => ({
     template: `
         <zy-button
             type="default"
-            color="default"
+            color="primary"
             [isLoading]="true"
             (onClick)="onClick($event)"
-        >Secondary Button</zy-button>
+        >Default Button</zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask
     },
 });
 
-export const Ghost = () => ({
+export const Secondary = () => ({
     template: `
         <zy-button
-            type="ghost"
-            color="default"
+            type="default"
+            color="secondary"
             (onClick)="onClick($event)"
         >
-            Secondary Button
+            Default Button
         </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const SecondaryWithIcon = () => ({
+    template: `
+        <zy-button
+            type="default"
+            color="secondary"
+            (onClick)="onClick($event)"
+        >
+            <span icon>+</span>With Icon
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
+export const SecondaryLoading = () => ({
+    template: `
+        <zy-button
+            type="default"
+            color="primary"
+            [isLoading]="true"
+            (onClick)="onClick($event)"
+        >Default Button</zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask
@@ -91,61 +120,11 @@ export const Disabled = () => ({
     template: `
         <zy-button
             type="default"
-            color="default"
+            color="primary"
             (onClick)="onClick($event)"
             disabled="true"
         >
-            Secondary Button
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const ComboWithoutSubItems = () => ({
-    template: `
-        <zy-button
-            type="split"
-            color="default"
-            (onClick)="onClick($event)"
-        >
-            <ng-container split-text>Secondary Button</ng-container>
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const ComboWitSubItemsAndOneCallback = () => ({
-    template: `
-        <zy-button
-            type="split"
-            color="default"
-            [items]="[{title: 'Combo item 1', onClick: onItemClick}, {title: 'Combo item 2'}]"
-            (onClick)="onClick($event)"
-        >
-            <ng-container split-text>Secondary Button</ng-container>
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask,
-        onItemClick: actionsData.onClickItem
-    },
-});
-
-
-export const ComboDisabled = () => ({
-    template: `
-        <zy-button
-            type="split"
-            color="default"
-            [items]="[{title: 'Combo item 1'}, {title: 'Combo item 2'}]"
-            (onClick)="onClick($event)"
-            disabled="true"
-        >
-            <ng-container split-text>Secondary Button</ng-container>
+            Default Button
         </zy-button>
     `,
     props: {

@@ -1,0 +1,117 @@
+@import './../button/button.component.scss';
+
+:host {
+    .zy-split-button {
+        position: relative;
+        z-index: 20;
+        display: inline-block;
+        color: white;
+
+        &__wrapper {
+            position: relative;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+        }
+
+        &__left-part {
+            @extend %button-base;
+
+            padding: 0 10px;
+            width: 127px;
+            border-radius: 5px 0 0 5px;
+            background-color: #2196f3;
+            color: inherit;
+            font-size: 1.3em;
+
+            @include zy-button-bgc-feedback(#2196f3);
+            @include disabled;
+        }
+
+        &__right-part {
+            @extend .zy-split-button__left-part;
+
+            width: 40px;
+            border-radius: 0 5px 5px 0;
+            border-left: 1px solid white;
+            font-size: 1.8em;
+        }
+
+        &.is-secondary {
+            color: #757575;
+
+            .zy-split-button__left-part {
+                background-color: #efeeea;
+
+                @include zy-button-bgc-feedback(#efeeea, 3);
+            }
+
+            .zy-split-button__right-part {
+                background-color: #efeeea;
+                @include zy-button-bgc-feedback(#efeeea, 3);
+            }
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            z-index: 10;
+            box-sizing: border-box;
+            margin-top: -10px;
+            width: 100%;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1.3em;
+            line-height: 1;
+            transform: translateY(-7px);
+            opacity: 0.45;
+            transition: all 0.15s ease-in-out;
+
+            &.is-opening {
+                transform: translateY(7px);
+                opacity: 1;
+            }
+
+            &__item {
+                background-color: #fff;
+                border-bottom: 1px solid #ccc;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            .item {
+                &__button {
+                    display: block;
+                    padding: 10px 5px;
+                    margin: 0;
+                    width: 100%;
+                    background: none;
+                    background-color: #fff;
+                    border: none;
+                    transition: background-color 0.15s ease-in-out;
+                    outline: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(#ccc, 0.56);
+                    }
+
+                    &:active {
+                        background-color: darken(#ccc, 0.5%);
+                    }
+
+                    &[disabled] {
+                        cursor: default;
+
+                        &:hover {
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

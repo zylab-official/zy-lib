@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Color } from '../button/models/color.types';
+import { Color } from '../../models/color.types';
 
+// @TODO: MOVE TO LOADERS MODULE
 @Component({
     selector: 'zy-loader',
     template: `
@@ -15,5 +16,5 @@ import { Color } from '../button/models/color.types';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoaderComponent {
-    @Input() color: Color = 'default';
+    @Input() color: Color = 'primary';
 }

@@ -8,7 +8,7 @@ import { XDConfig2020 } from 'storybook-addon-xd-designs/lib/config';
 
 export default {
     ...baseSettings,
-    title: 'Components/Buttons/Rounded',
+    title: 'Components/Buttons/Ghost',
     parameters: {
         badges: ['beta'],
         design: config({
@@ -24,63 +24,49 @@ export default {
 };
 
 export const actionsData = {
-    onClickTask: action('Click priority button!'),
+    onClickTask: action('Click main button!'),
+    onClickItem: action('Click item button!'),
 };
 
 export const Primary = () => ({
     template: `
         <zy-button
-            type="round"
+            type="ghost"
             color="primary"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>
+            Ghost Button
         </zy-button>
     `,
     props: {
         onClick: actionsData.onClickTask
     },
 });
+
+export const PrimaryWithIcon = () => ({
+    template: `
+        <zy-button
+            type="ghost"
+            color="primary"
+            (onClick)="onClick($event)"
+        >
+            <span icon>+</span>With Icon
+        </zy-button>
+    `,
+    props: {
+        onClick: actionsData.onClickTask
+    },
+});
+
 
 export const Secondary = () => ({
     template: `
         <zy-button
-            type="round"
-            color="default"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const OutlinedPrimary = () => ({
-    template: `
-        <zy-button
-            type="round"
-            color="primary"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-
-export const OutlinedSecondary = () => ({
-    template: `
-        <zy-button
-            type="round"
+            type="ghost"
             color="secondary"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>
+            Ghost Button
         </zy-button>
     `,
     props: {
@@ -88,29 +74,14 @@ export const OutlinedSecondary = () => ({
     },
 });
 
-export const GhostPrimary = () => ({
+export const SecondaryWithIcon = () => ({
     template: `
         <zy-button
             type="ghost"
-            color="primary"
+            color="secondary"
             (onClick)="onClick($event)"
         >
-            <span icon>+</span>
-        </zy-button>
-    `,
-    props: {
-        onClick: actionsData.onClickTask
-    },
-});
-
-export const GhostSecondary = () => ({
-    template: `
-        <zy-button
-            type="ghost"
-            color="default"
-            (onClick)="onClick($event)"
-        >
-            <span icon>+</span>
+            <span icon>+</span>With Icon
         </zy-button>
     `,
     props: {
@@ -121,12 +92,12 @@ export const GhostSecondary = () => ({
 export const Disabled = () => ({
     template: `
         <zy-button
-            type="round"
-            color="primary"
+            type="ghost"
+            color="secondary"
             (onClick)="onClick($event)"
             disabled="true"
         >
-            <span icon>+</span>
+            Ghost Button
         </zy-button>
     `,
     props: {
