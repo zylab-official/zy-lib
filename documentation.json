@@ -856,6 +856,14 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/components/buttons/customize-split-button._stories.ts",
+                "type": "object",
+                "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/components/buttons/customize-button._stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
@@ -867,14 +875,6 @@
                 "file": "stories/components/buttons/default.stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click main button!'),\r\n    onClickItem: action('Click item button!'),\r\n}"
-            },
-            {
-                "name": "actionsData",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/components/buttons/customize-split-button._stories.ts",
-                "type": "object",
-                "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
             },
             {
                 "name": "actionsData",
@@ -944,17 +944,17 @@
                 "name": "Customize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-button._stories.ts",
+                "file": "stories/components/buttons/customize-split-button._stories.ts",
                 "type": "",
-                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
             },
             {
                 "name": "Customize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-split-button._stories.ts",
+                "file": "stories/components/buttons/customize-button._stories.ts",
                 "type": "",
-                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
             },
             {
                 "name": "Disabled",
@@ -1257,6 +1257,24 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "stories/components/buttons/customize-split-button._stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/customize-split-button._stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+                },
+                {
+                    "name": "Customize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/customize-split-button._stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                }
+            ],
             "stories/components/buttons/customize-button._stories.ts": [
                 {
                     "name": "actionsData",
@@ -1339,24 +1357,6 @@
                     "file": "stories/components/buttons/default.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"default\"\r\n            color=\"secondary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                }
-            ],
-            "stories/components/buttons/customize-split-button._stories.ts": [
-                {
-                    "name": "actionsData",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/customize-split-button._stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
-                },
-                {
-                    "name": "Customize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/customize-split-button._stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
                 }
             ],
             "stories/components/buttons/ghost.stories.ts": [

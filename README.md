@@ -24,6 +24,7 @@ ____
 - Unify button components
 - Fix Actions steps
 - Install Lib to Github Packages
+- Update Storybook to latest version after this issue will be fixed https://github.com/UX-and-I/storybook-design-token/issues/50
 
 ## Basics
 
