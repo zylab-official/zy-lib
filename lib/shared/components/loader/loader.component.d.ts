@@ -1,4 +1,4 @@
-import { Color } from '../button/models/color.types';
+import { Color } from '../../models/color.types';
 import * as i0 from "@angular/core";
 export declare class LoaderComponent {
     color: Color;

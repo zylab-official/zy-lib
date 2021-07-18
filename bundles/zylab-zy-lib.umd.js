@@ -28,554 +28,6 @@
     var i1__namespace = /*#__PURE__*/_interopNamespace(i1);
     var i1__namespace$1 = /*#__PURE__*/_interopNamespace(i1$1);
 
-    var LoaderComponent = /** @class */ (function () {
-        function LoaderComponent() {
-            this.color = 'default';
-        }
-        return LoaderComponent;
-    }());
-    LoaderComponent.ɵfac = function LoaderComponent_Factory(t) { return new (t || LoaderComponent)(); };
-    LoaderComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: LoaderComponent, selectors: [["zy-loader"]], inputs: { color: "color" }, decls: 5, vars: 2, consts: [[1, "loader"]], template: function LoaderComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵelementStart(0, "span", 0);
-                i0__namespace.ɵɵelement(1, "span");
-                i0__namespace.ɵɵelement(2, "span");
-                i0__namespace.ɵɵelement(3, "span");
-                i0__namespace.ɵɵelement(4, "span");
-                i0__namespace.ɵɵelementEnd();
-            }
-            if (rf & 2) {
-                i0__namespace.ɵɵclassProp("is-primary", ctx.color === "primary");
-            }
-        }, styles: ["[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]{display:inline-block;position:relative;width:20px;height:20px}@-webkit-keyframes loader-ring{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes loader-ring{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{box-sizing:border-box;display:block;position:absolute;width:20px;height:20px;border-radius:50%;-webkit-animation:loader-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;animation:loader-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;border:3px solid transparent;border-top-color:#757575}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.45s;animation-delay:-.45s}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}[_nghost-%COMP%]   .loader.is-primary[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{border:3px solid transparent;border-top-color:#fff}"], changeDetection: 0 });
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(LoaderComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'zy-loader',
-                        template: "\n        <span class=\"loader\" [class.is-primary]=\"color === 'primary'\">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n        </span>\n    ",
-                        styleUrls: ['./loader.component.scss'],
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush
-                    }]
-            }], null, { color: [{
-                    type: i0.Input
-                }] });
-    })();
-
-    function ButtonComponent_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementContainer(0, 5);
-        }
-        if (rf & 2) {
-            i0__namespace.ɵɵnextContext();
-            var _r4 = i0__namespace.ɵɵreference(6);
-            i0__namespace.ɵɵproperty("ngTemplateOutlet", _r4);
-        }
-    }
-    function ButtonComponent_ng_container_2_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementContainer(0, 5);
-        }
-        if (rf & 2) {
-            i0__namespace.ɵɵnextContext();
-            var _r2 = i0__namespace.ɵɵreference(4);
-            i0__namespace.ɵɵproperty("ngTemplateOutlet", _r2);
-        }
-    }
-    function ButtonComponent_ng_template_3_ng_content_2_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵprojection(0, 0, ["*ngIf", "!isLoading; else loading"]);
-        }
-    }
-    function ButtonComponent_ng_template_3_ng_template_3_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelement(0, "zy-loader", 11);
-        }
-        if (rf & 2) {
-            var ctx_r8 = i0__namespace.ɵɵnextContext(2);
-            i0__namespace.ɵɵproperty("color", ctx_r8.color);
-        }
-    }
-    function ButtonComponent_ng_template_3_span_5_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementStart(0, "span", 12);
-            i0__namespace.ɵɵprojection(1, 1);
-            i0__namespace.ɵɵelementEnd();
-        }
-    }
-    var _c0$2 = function (a0, a1, a2, a3) { return { "is-primary": a0, "is-round": a1, "is-outlined": a2, "is-ghost": a3 }; };
-    function ButtonComponent_ng_template_3_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r11_1 = i0__namespace.ɵɵgetCurrentView();
-            i0__namespace.ɵɵelementStart(0, "button", 6);
-            i0__namespace.ɵɵlistener("click", function ButtonComponent_ng_template_3_Template_button_click_0_listener($event) { i0__namespace.ɵɵrestoreView(_r11_1); var ctx_r10 = i0__namespace.ɵɵnextContext(); return ctx_r10.clickHandler($event); });
-            i0__namespace.ɵɵelementStart(1, "span", 7);
-            i0__namespace.ɵɵtemplate(2, ButtonComponent_ng_template_3_ng_content_2_Template, 1, 0, "ng-content", 8);
-            i0__namespace.ɵɵtemplate(3, ButtonComponent_ng_template_3_ng_template_3_Template, 1, 1, "ng-template", null, 9, i0__namespace.ɵɵtemplateRefExtractor);
-            i0__namespace.ɵɵtemplate(5, ButtonComponent_ng_template_3_span_5_Template, 2, 0, "span", 10);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var _r7 = i0__namespace.ɵɵreference(4);
-            var ctx_r3 = i0__namespace.ɵɵnextContext();
-            i0__namespace.ɵɵproperty("ngClass", i0__namespace.ɵɵpureFunction4(5, _c0$2, ctx_r3.color === "primary", ctx_r3.type === "round", ctx_r3.type === "outlined", ctx_r3.type === "ghost"))("disabled", ctx_r3.isDisabled);
-            i0__namespace.ɵɵadvance(2);
-            i0__namespace.ɵɵproperty("ngIf", !ctx_r3.isLoading)("ngIfElse", _r7);
-            i0__namespace.ɵɵadvance(3);
-            i0__namespace.ɵɵproperty("ngIf", ctx_r3.type !== "round");
-        }
-    }
-    function ButtonComponent_ng_template_5_ng_container_5_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementContainerStart(0);
-            i0__namespace.ɵɵtext(1, "\u25BE");
-            i0__namespace.ɵɵelementContainerEnd();
-        }
-    }
-    function ButtonComponent_ng_template_5_ng_container_6_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementContainerStart(0);
-            i0__namespace.ɵɵtext(1, "\u25B4");
-            i0__namespace.ɵɵelementContainerEnd();
-        }
-    }
-    function ButtonComponent_ng_template_5_ng_container_7_div_2_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r18_1 = i0__namespace.ɵɵgetCurrentView();
-            i0__namespace.ɵɵelementStart(0, "div", 20);
-            i0__namespace.ɵɵelementStart(1, "button", 21);
-            i0__namespace.ɵɵlistener("click", function ButtonComponent_ng_template_5_ng_container_7_div_2_Template_button_click_1_listener($event) { i0__namespace.ɵɵrestoreView(_r18_1); var item_r16 = ctx.$implicit; var ctx_r17 = i0__namespace.ɵɵnextContext(3); item_r16.onClick && item_r16.onClick($event); return ctx_r17.selectHandler($event, true); });
-            i0__namespace.ɵɵtext(2);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var item_r16 = ctx.$implicit;
-            i0__namespace.ɵɵadvance(1);
-            i0__namespace.ɵɵproperty("disabled", item_r16.isDisabled || !item_r16.onClick);
-            i0__namespace.ɵɵadvance(1);
-            i0__namespace.ɵɵtextInterpolate(item_r16.title);
-        }
-    }
-    function ButtonComponent_ng_template_5_ng_container_7_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementContainerStart(0);
-            i0__namespace.ɵɵelementStart(1, "div", 18);
-            i0__namespace.ɵɵtemplate(2, ButtonComponent_ng_template_5_ng_container_7_div_2_Template, 3, 2, "div", 19);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var ctx_r14 = i0__namespace.ɵɵnextContext(2);
-            i0__namespace.ɵɵadvance(2);
-            i0__namespace.ɵɵproperty("ngForOf", ctx_r14.items);
-        }
-    }
-    var _c1$1 = function (a0) { return { "is-primary": a0 }; };
-    function ButtonComponent_ng_template_5_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r20_1 = i0__namespace.ɵɵgetCurrentView();
-            i0__namespace.ɵɵelementStart(0, "div", 13);
-            i0__namespace.ɵɵelementStart(1, "div", 14);
-            i0__namespace.ɵɵelementStart(2, "button", 15);
-            i0__namespace.ɵɵlistener("click", function ButtonComponent_ng_template_5_Template_button_click_2_listener($event) { i0__namespace.ɵɵrestoreView(_r20_1); var ctx_r19 = i0__namespace.ɵɵnextContext(); return ctx_r19.clickHandler($event); });
-            i0__namespace.ɵɵprojection(3, 2);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(4, "button", 16);
-            i0__namespace.ɵɵlistener("click", function ButtonComponent_ng_template_5_Template_button_click_4_listener($event) { i0__namespace.ɵɵrestoreView(_r20_1); var ctx_r21 = i0__namespace.ɵɵnextContext(); return ctx_r21.selectHandler($event); });
-            i0__namespace.ɵɵtemplate(5, ButtonComponent_ng_template_5_ng_container_5_Template, 2, 0, "ng-container", 17);
-            i0__namespace.ɵɵtemplate(6, ButtonComponent_ng_template_5_ng_container_6_Template, 2, 0, "ng-container", 17);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵtemplate(7, ButtonComponent_ng_template_5_ng_container_7_Template, 3, 1, "ng-container", 17);
-            i0__namespace.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r5 = i0__namespace.ɵɵnextContext();
-            i0__namespace.ɵɵproperty("ngClass", i0__namespace.ɵɵpureFunction1(6, _c1$1, ctx_r5.color === "primary"));
-            i0__namespace.ɵɵadvance(2);
-            i0__namespace.ɵɵproperty("disabled", ctx_r5.isDisabled);
-            i0__namespace.ɵɵadvance(2);
-            i0__namespace.ɵɵproperty("disabled", ctx_r5.isDisabled || !ctx_r5.items.length);
-            i0__namespace.ɵɵadvance(1);
-            i0__namespace.ɵɵproperty("ngIf", ctx_r5.isSplitClosed);
-            i0__namespace.ɵɵadvance(1);
-            i0__namespace.ɵɵproperty("ngIf", !ctx_r5.isSplitClosed);
-            i0__namespace.ɵɵadvance(1);
-            i0__namespace.ɵɵproperty("ngIf", ctx_r5.items.length && !ctx_r5.isSplitClosed);
-        }
-    }
-    var _c2 = [[["", "icon", ""]], "*", [["", "split-text", ""]]];
-    var _c3 = ["[icon]", "*", "[split-text]"];
-    var ButtonComponent = /** @class */ (function () {
-        function ButtonComponent(elementRef) {
-            this.elementRef = elementRef;
-            this.items = [];
-            this.isLoading = false;
-            this.onClick = new i0.EventEmitter();
-            this.isSplitClosed = true;
-            this._buttonType = 'default';
-            this._buttonColor = 'default';
-            this._disabled = false;
-        }
-        Object.defineProperty(ButtonComponent.prototype, "type", {
-            get: function () {
-                return this._buttonType;
-            },
-            set: function (value) {
-                console.log(value);
-                this._buttonType = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        ;
-        Object.defineProperty(ButtonComponent.prototype, "color", {
-            get: function () {
-                return this._buttonColor;
-            },
-            set: function (value) {
-                this._buttonColor = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        ;
-        Object.defineProperty(ButtonComponent.prototype, "isDisabled", {
-            get: function () {
-                return this._disabled;
-            },
-            set: function (value) {
-                this._disabled = value;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        ButtonComponent.prototype.DocumentClick = function (event) {
-            if (!this.elementRef.nativeElement.contains(event.target)) {
-                this.selectHandler(event, true);
-            }
-        };
-        ButtonComponent.prototype.clickHandler = function (e) {
-            if (this.isLoading)
-                return;
-            if (this.type === 'split') {
-                this.selectHandler(e, true);
-            }
-            this.onClick.emit(e);
-        };
-        ButtonComponent.prototype.selectHandler = function (e, close) {
-            this.isSplitClosed = close || !this.isSplitClosed;
-            if (!this.isSplitClosed)
-                this.animateSubMenu();
-        };
-        ButtonComponent.prototype.animateSubMenu = function () {
-            var _this = this;
-            if (this._animationTimer)
-                clearTimeout(this._animationTimer);
-            this._animationTimer = setTimeout(function () {
-                var _a;
-                (_a = _this.elementRef.nativeElement.querySelector('.sub-menu')) === null || _a === void 0 ? void 0 : _a.classList.add('is-opening');
-            }, 0);
-        };
-        return ButtonComponent;
-    }());
-    ButtonComponent.ɵfac = function ButtonComponent_Factory(t) { return new (t || ButtonComponent)(i0__namespace.ɵɵdirectiveInject(i0__namespace.ElementRef)); };
-    ButtonComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: ButtonComponent, selectors: [["zy-button"]], hostBindings: function ButtonComponent_HostBindings(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵlistener("click", function ButtonComponent_click_HostBindingHandler($event) { return ctx.DocumentClick($event); }, false, i0__namespace.ɵɵresolveDocument);
-            }
-        }, inputs: { type: "type", color: "color", isDisabled: ["disabled", "isDisabled"], items: "items", isLoading: "isLoading" }, outputs: { onClick: "onClick" }, ngContentSelectors: _c3, decls: 7, vars: 2, consts: [[3, "ngSwitch"], [3, "ngTemplateOutlet", 4, "ngSwitchCase"], [3, "ngTemplateOutlet", 4, "ngSwitchDefault"], ["SimpleButton", ""], ["SplitButton", ""], [3, "ngTemplateOutlet"], [1, "zy-button", 3, "ngClass", "disabled", "click"], [1, "zy-button__wrapper"], [4, "ngIf", "ngIfElse"], ["loading", ""], ["class", "title", 4, "ngIf"], [3, "color"], [1, "title"], [1, "zy-split-button", 3, "ngClass"], [1, "zy-split-button__wrapper"], [1, "zy-split-button__left-part", 3, "disabled", "click"], [1, "zy-split-button__right-part", 3, "disabled", "click"], [4, "ngIf"], [1, "sub-menu"], ["class", "sub-menu__item item", 4, "ngFor", "ngForOf"], [1, "sub-menu__item", "item"], [1, "item__button", 3, "disabled", "click"]], template: function ButtonComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵprojectionDef(_c2);
-                i0__namespace.ɵɵelementContainerStart(0, 0);
-                i0__namespace.ɵɵtemplate(1, ButtonComponent_ng_container_1_Template, 1, 1, "ng-container", 1);
-                i0__namespace.ɵɵtemplate(2, ButtonComponent_ng_container_2_Template, 1, 1, "ng-container", 2);
-                i0__namespace.ɵɵelementContainerEnd();
-                i0__namespace.ɵɵtemplate(3, ButtonComponent_ng_template_3_Template, 6, 10, "ng-template", null, 3, i0__namespace.ɵɵtemplateRefExtractor);
-                i0__namespace.ɵɵtemplate(5, ButtonComponent_ng_template_5_Template, 8, 8, "ng-template", null, 4, i0__namespace.ɵɵtemplateRefExtractor);
-            }
-            if (rf & 2) {
-                i0__namespace.ɵɵproperty("ngSwitch", ctx.type);
-                i0__namespace.ɵɵadvance(1);
-                i0__namespace.ɵɵproperty("ngSwitchCase", "split");
-            }
-        }, directives: [i1__namespace.NgSwitch, i1__namespace.NgSwitchCase, i1__namespace.NgSwitchDefault, i1__namespace.NgTemplateOutlet, i1__namespace.NgClass, i1__namespace.NgIf, LoaderComponent, i1__namespace.NgForOf], styles: ["[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{display:inline-block;height:40px;border:none;line-height:1;font-weight:700;font-size:1.3em;text-align:center;outline:none;transition:background-color .15s ease-in-out;cursor:pointer}[_nghost-%COMP%]{font-size:10px}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{display:flex;justify-content:space-around;align-items:center;box-sizing:border-box;padding:0 10px;width:127px;border-radius:5px;background-color:#efeeea;color:#757575}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:active{background-color:#e6e5de}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important}[_nghost-%COMP%]   .zy-button__wrapper[_ngcontent-%COMP%]{display:flex;align-items:center}[_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]{background-color:#2196f3;color:#fff}[_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]:active{background-color:#0d87e9}[_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;background-color:#fff!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-primary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]{width:40px;border-radius:50%;font-size:1.4em}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;background-color:#fff!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     zy-loader+.title{margin-left:0}[_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{border:1px solid #9e9e9e}[_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]{border-color:#2196f3;background-color:#bbdefb;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]:hover{background-color:#b1d9fa}[_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]:active{background-color:#9ed0f9}[_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;background-color:#fff!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-outlined.is-primary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]{background-color:transparent}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]     [icon]{transition:color .15s ease-in-out}[_nghost-%COMP%]   .zy-button.is-ghost.is-primary[_ngcontent-%COMP%]{background-color:transparent;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-ghost.is-primary[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost.is-primary[_ngcontent-%COMP%]:hover     [icon]{color:#0c7cd5}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover     [icon]{color:#5c5c5c}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     zy-loader+.title{margin-left:10px}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]{position:relative;z-index:20;display:inline-block;color:#757575}[_nghost-%COMP%]   .zy-split-button__wrapper[_ngcontent-%COMP%]{position:relative;z-index:30;display:flex;align-items:center}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{padding:0 10px;width:127px;border-radius:5px 0 0 5px;background-color:#efeeea;color:inherit;font-size:1.3em}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:active, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#e6e5de}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;background-color:#fff!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:hover, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important}[_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{width:40px;border-radius:0 5px 5px 0;border-left:1px solid #fff;font-size:1.8em}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]{color:#fff}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{background-color:#2196f3}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:active, [_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#0d87e9}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{background-color:#2196f3}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-split-button.is-primary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#0d87e9}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]{position:absolute;top:100%;z-index:10;box-sizing:border-box;margin-top:-10px;width:100%;color:#000;border:1px solid #ccc;border-radius:3px;font-size:1.3em;line-height:1;transform:translateY(-7px);opacity:.45;transition:all .15s ease-in-out}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu.is-opening[_ngcontent-%COMP%]{transform:translateY(7px);opacity:1}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu__item[_ngcontent-%COMP%]{background-color:#fff;border-bottom:1px solid #ccc}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu__item[_ngcontent-%COMP%]:last-child{border-bottom:none}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]{display:block;padding:10px 5px;margin:0;width:100%;background:none;background-color:#fff;border:none;transition:background-color .15s ease-in-out;outline:none;cursor:pointer}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]:hover{background-color:hsla(0,0%,80%,.56)}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]:active{background-color:#cbcbcb}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[disabled][_ngcontent-%COMP%]{cursor:default}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[disabled][_ngcontent-%COMP%]:hover{background-color:#fff}"], changeDetection: 0 });
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(ButtonComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'zy-button',
-                        templateUrl: './button.component.html',
-                        styleUrls: ['./button.component.scss'],
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush
-                    }]
-            }], function () { return [{ type: i0__namespace.ElementRef }]; }, { type: [{
-                    type: i0.Input
-                }], color: [{
-                    type: i0.Input
-                }], isDisabled: [{
-                    type: i0.Input,
-                    args: ['disabled']
-                }], items: [{
-                    type: i0.Input
-                }], isLoading: [{
-                    type: i0.Input
-                }], onClick: [{
-                    type: i0.Output
-                }], DocumentClick: [{
-                    type: i0.HostListener,
-                    args: ['document:click', ['$event']]
-                }] });
-    })();
-
-    var ButtonModule = /** @class */ (function () {
-        function ButtonModule() {
-        }
-        return ButtonModule;
-    }());
-    ButtonModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: ButtonModule });
-    ButtonModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function ButtonModule_Factory(t) { return new (t || ButtonModule)(); }, imports: [[
-                i1.CommonModule
-            ]] });
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(ButtonModule, { declarations: [ButtonComponent,
-                LoaderComponent], imports: [i1.CommonModule], exports: [ButtonComponent] });
-    })();
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(ButtonModule, [{
-                type: i0.NgModule,
-                args: [{
-                        imports: [
-                            i1.CommonModule
-                        ],
-                        declarations: [
-                            ButtonComponent,
-                            LoaderComponent
-                        ],
-                        exports: [
-                            ButtonComponent,
-                        ]
-                    }]
-            }], null, null);
-    })();
-
-    var _c0$1 = ["checkbox"];
-    var CheckboxComponent = /** @class */ (function () {
-        function CheckboxComponent() {
-            this.autofocus = false;
-            this.isCheckbox = true;
-            this.checkedChange = new i0.EventEmitter();
-            this.onClick = new i0.EventEmitter();
-        }
-        Object.defineProperty(CheckboxComponent.prototype, "checked", {
-            get: function () {
-                return this._checked;
-            },
-            set: function (checked) {
-                this._checked = checked;
-                this.checkbox.checked = checked; // selection is not always updated based on the model in IE, hence explicitly setting the value via DOM
-            },
-            enumerable: false,
-            configurable: true
-        });
-        // handling 'click' on the element rather than on checkbox as FireFox does not trigger 'click' on checkbox if SHIFT is pressed
-        CheckboxComponent.prototype.onMouseClick = function (event) {
-            var _this = this;
-            if (!this.ignoreTimeout) {
-                this.checkedChange.next(!this._checked);
-                this.onClick.next({
-                    shiftKey: event.shiftKey
-                });
-                // 'click' event might be triggered on the label element and/or bubbled up from the checkbox element -> ignore the second event
-                this.ignoreTimeout = window.setTimeout(function () {
-                    _this.ignoreTimeout = 0;
-                });
-            }
-            this.checkbox.checked = this.checked;
-            this.checkbox.indeterminate = this.indeterminate;
-            this.checkbox.focus(); // compensating for focus not being set due to [dr-prevent-default-on-mousedown]
-        };
-        Object.defineProperty(CheckboxComponent.prototype, "checkboxRef", {
-            set: function (checkboxRef) {
-                this.checkbox = checkboxRef.nativeElement;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        CheckboxComponent.prototype.ngOnDestroy = function () {
-            if (this.ignoreTimeout) {
-                window.clearTimeout(this.ignoreTimeout);
-            }
-        };
-        return CheckboxComponent;
-    }());
-    CheckboxComponent.ɵfac = function CheckboxComponent_Factory(t) { return new (t || CheckboxComponent)(); };
-    CheckboxComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: CheckboxComponent, selectors: [["zy-checkbox"]], viewQuery: function CheckboxComponent_Query(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵstaticViewQuery(_c0$1, true);
-            }
-            if (rf & 2) {
-                var _t = void 0;
-                i0__namespace.ɵɵqueryRefresh(_t = i0__namespace.ɵɵloadQuery()) && (ctx.checkboxRef = _t.first);
-            }
-        }, hostVars: 4, hostBindings: function CheckboxComponent_HostBindings(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵlistener("click", function CheckboxComponent_click_HostBindingHandler($event) { return ctx.onMouseClick($event); });
-            }
-            if (rf & 2) {
-                i0__namespace.ɵɵclassProp("is-disabled", ctx.disabled)("checkbox", ctx.isCheckbox);
-            }
-        }, inputs: { checked: "checked", indeterminate: "indeterminate", autofocus: "autofocus", disabled: "disabled" }, outputs: { checkedChange: "checkedChange", onClick: "onClick" }, decls: 2, vars: 3, consts: [["type", "checkbox", 3, "ngModel", "disabled", "indeterminate"], ["checkbox", ""]], template: function CheckboxComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵelement(0, "input", 0, 1);
-            }
-            if (rf & 2) {
-                i0__namespace.ɵɵproperty("ngModel", ctx.checked)("disabled", ctx.disabled)("indeterminate", ctx.indeterminate);
-            }
-        }, directives: [i1__namespace$1.CheckboxControlValueAccessor, i1__namespace$1.NgControlStatus, i1__namespace$1.NgModel], encapsulation: 2, changeDetection: 0 });
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(CheckboxComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'zy-checkbox',
-                        templateUrl: './checkbox.component.html',
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush
-                    }]
-            }], null, { checked: [{
-                    type: i0.Input
-                }], indeterminate: [{
-                    type: i0.Input
-                }], autofocus: [{
-                    type: i0.Input
-                }], disabled: [{
-                    type: i0.Input
-                }, {
-                    type: i0.HostBinding,
-                    args: ['class.is-disabled']
-                }], isCheckbox: [{
-                    type: i0.HostBinding,
-                    args: ['class.checkbox']
-                }], onMouseClick: [{
-                    type: i0.HostListener,
-                    args: ['click', ['$event']]
-                }], checkedChange: [{
-                    type: i0.Output
-                }], onClick: [{
-                    type: i0.Output
-                }], checkboxRef: [{
-                    type: i0.ViewChild,
-                    args: ['checkbox', { static: true }]
-                }] });
-    })();
-
-    var CheckboxModule = /** @class */ (function () {
-        function CheckboxModule() {
-        }
-        return CheckboxModule;
-    }());
-    CheckboxModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: CheckboxModule });
-    CheckboxModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function CheckboxModule_Factory(t) { return new (t || CheckboxModule)(); }, imports: [[
-                i1.CommonModule,
-                i1$1.FormsModule
-            ]] });
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(CheckboxModule, { declarations: [CheckboxComponent], imports: [i1.CommonModule,
-                i1$1.FormsModule], exports: [CheckboxComponent] });
-    })();
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(CheckboxModule, [{
-                type: i0.NgModule,
-                args: [{
-                        imports: [
-                            i1.CommonModule,
-                            i1$1.FormsModule
-                        ],
-                        declarations: [
-                            CheckboxComponent
-                        ],
-                        exports: [
-                            CheckboxComponent,
-                        ]
-                    }]
-            }], null, null);
-    })();
-
-    function PageTitleComponent_div_0_Template(rf, ctx) {
-        if (rf & 1) {
-            i0__namespace.ɵɵelementStart(0, "div", 1);
-            i0__namespace.ɵɵelementStart(1, "div", 2);
-            i0__namespace.ɵɵprojection(2);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(3, "div", 3);
-            i0__namespace.ɵɵelementStart(4, "div");
-            i0__namespace.ɵɵelementStart(5, "div", 4);
-            i0__namespace.ɵɵelementStart(6, "div", 5);
-            i0__namespace.ɵɵelementStart(7, "span", 6);
-            i0__namespace.ɵɵtext(8);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(9, "div", 7);
-            i0__namespace.ɵɵprojection(10, 1);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(11, "div", 8);
-            i0__namespace.ɵɵprojection(12, 2);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(13, "div", 7);
-            i0__namespace.ɵɵprojection(14, 3);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementStart(15, "div");
-            i0__namespace.ɵɵelementStart(16, "div", 9);
-            i0__namespace.ɵɵprojection(17, 4);
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-            i0__namespace.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r0 = i0__namespace.ɵɵnextContext();
-            i0__namespace.ɵɵadvance(8);
-            i0__namespace.ɵɵtextInterpolate(ctx_r0.title);
-        }
-    }
-    var _c0 = [[["", "page-title-icon", ""]], [["", "page-title-extra", ""]], [["", "page-title-content-centered", ""]], [["", "page-title-content-right", ""]], [["", "page-title-subheader", ""]]];
-    var _c1 = ["[page-title-icon]", "[page-title-extra]", "[page-title-content-centered]", "[page-title-content-right]", "[page-title-subheader]"];
-    // import { Title } from '@angular/platform-browser';
-    // import { ActivatedRoute } from '@angular/router';
-    // import { ErrorDisplayService, PageTitle, PageTitleService } from 'app/core';
-    // import { empty, of, Subscription } from 'rxjs';
-    // import { filter, switchMap, tap } from 'rxjs/operators';
-    var PageTitleComponent /* implements OnInit, OnDestroy */ = /** @class */ (function () {
-        function PageTitleComponent() {
-        }
-        return PageTitleComponent;
-    }());
-    PageTitleComponent.ɵfac = function PageTitleComponent_Factory(t) { return new (t || PageTitleComponent /* implements OnInit, OnDestroy */)(); };
-    PageTitleComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: PageTitleComponent /* implements OnInit, OnDestroy */, selectors: [["page-title"]], inputs: { title: "title" }, ngContentSelectors: _c1, decls: 1, vars: 1, consts: [["class", "columns is-mobile", 4, "ngIf"], [1, "columns", "is-mobile"], [1, "column", "is-narrow", "is-icon"], [1, "column", "is-wide"], [1, "columns", "page-title", "is-gapless", "is-mobile", "is-centered"], [1, "column", "page-title-text", "is-narrow"], ["data-test-page-title", ""], [1, "column", "is-narrow"], [1, "column", "has-text-centered"], [1, "columns", "is-gapless", "is-mobile"]], template: function PageTitleComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵprojectionDef(_c0);
-                i0__namespace.ɵɵtemplate(0, PageTitleComponent_div_0_Template, 18, 1, "div", 0);
-            }
-            if (rf & 2) {
-                i0__namespace.ɵɵproperty("ngIf", !ctx.inactive);
-            }
-        }, styles: [""] });
-    /*@__PURE__*/ (function () {
-        i0__namespace.ɵsetClassMetadata(PageTitleComponent /* implements OnInit, OnDestroy */, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'page-title',
-                        templateUrl: './page-title.component.html',
-                        styleUrls: ['./page-title.component.scss']
-                    }]
-            }], null, { title: [{
-                    type: i0.Input
-                }] });
-    })();
-
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
 
@@ -888,7 +340,609 @@
         return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
-    var components = [PageTitleComponent];
+    var ButtonComponentBase = /** @class */ (function () {
+        function ButtonComponentBase() {
+            this.isLoading = false;
+            this.onClick = new i0.EventEmitter();
+            this._buttonColor = 'primary';
+            this._disabled = false;
+        }
+        Object.defineProperty(ButtonComponentBase.prototype, "color", {
+            get: function () {
+                return this._buttonColor;
+            },
+            set: function (value) {
+                this._buttonColor = value;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(ButtonComponentBase.prototype, "isDisabled", {
+            get: function () {
+                return this._disabled;
+            },
+            set: function (value) {
+                this._disabled = value;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        return ButtonComponentBase;
+    }());
+    ButtonComponentBase.ɵfac = function ButtonComponentBase_Factory(t) { return new (t || ButtonComponentBase)(); };
+    ButtonComponentBase.ɵdir = i0__namespace.ɵɵdefineDirective({ type: ButtonComponentBase, inputs: { color: "color", isDisabled: ["disabled", "isDisabled"], isLoading: "isLoading" }, outputs: { onClick: "onClick" } });
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(ButtonComponentBase, [{
+                type: i0.Directive
+            }], null, { color: [{
+                    type: i0.Input
+                }], isDisabled: [{
+                    type: i0.Input,
+                    args: ['disabled']
+                }], isLoading: [{
+                    type: i0.Input
+                }], onClick: [{
+                    type: i0.Output
+                }] });
+    })();
+
+    // @TODO: MOVE TO LOADERS MODULE
+    var LoaderComponent = /** @class */ (function () {
+        function LoaderComponent() {
+            this.color = 'primary';
+        }
+        return LoaderComponent;
+    }());
+    LoaderComponent.ɵfac = function LoaderComponent_Factory(t) { return new (t || LoaderComponent)(); };
+    LoaderComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: LoaderComponent, selectors: [["zy-loader"]], inputs: { color: "color" }, decls: 5, vars: 2, consts: [[1, "loader"]], template: function LoaderComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵelementStart(0, "span", 0);
+                i0__namespace.ɵɵelement(1, "span");
+                i0__namespace.ɵɵelement(2, "span");
+                i0__namespace.ɵɵelement(3, "span");
+                i0__namespace.ɵɵelement(4, "span");
+                i0__namespace.ɵɵelementEnd();
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵclassProp("is-primary", ctx.color === "primary");
+            }
+        }, styles: ["[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]{display:inline-block;position:relative;width:20px;height:20px}@-webkit-keyframes loader-ring{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes loader-ring{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{box-sizing:border-box;display:block;position:absolute;width:20px;height:20px;border-radius:50%;-webkit-animation:loader-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;animation:loader-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;border:3px solid transparent;border-top-color:#fff}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:first-child{-webkit-animation-delay:-.45s;animation-delay:-.45s}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}[_nghost-%COMP%]   .loader[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}[_nghost-%COMP%]   .loader.is-secondary[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{border:3px solid transparent;border-top-color:#757575}"], changeDetection: 0 });
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(LoaderComponent, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'zy-loader',
+                        template: "\n        <span class=\"loader\" [class.is-primary]=\"color === 'primary'\">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n        </span>\n    ",
+                        styleUrls: ['./loader.component.scss'],
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush
+                    }]
+            }], null, { color: [{
+                    type: i0.Input
+                }] });
+    })();
+
+    function ButtonComponent_ng_content_2_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵprojection(0, 0, ["*ngIf", "!isLoading; else loading"]);
+        }
+    }
+    function ButtonComponent_ng_template_3_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelement(0, "zy-loader", 5);
+        }
+        if (rf & 2) {
+            var ctx_r2 = i0__namespace.ɵɵnextContext();
+            i0__namespace.ɵɵproperty("color", ctx_r2.color);
+        }
+    }
+    function ButtonComponent_span_5_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelementStart(0, "span", 6);
+            i0__namespace.ɵɵprojection(1, 1);
+            i0__namespace.ɵɵelementEnd();
+        }
+    }
+    var _c0$3 = [[["", "icon", ""]], "*"];
+    var _c1$2 = function (a0, a1, a2, a3) { return { "is-secondary": a0, "is-round": a1, "is-outlined": a2, "is-ghost": a3 }; };
+    var _c2 = ["[icon]", "*"];
+    var ButtonComponent = /** @class */ (function (_super) {
+        __extends(ButtonComponent, _super);
+        function ButtonComponent() {
+            var _this = _super.apply(this, __spread(arguments)) || this;
+            _this._buttonType = 'default';
+            return _this;
+        }
+        Object.defineProperty(ButtonComponent.prototype, "type", {
+            get: function () {
+                return this._buttonType;
+            },
+            set: function (value) {
+                this._buttonType = value;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        ;
+        ButtonComponent.prototype.clickHandler = function (e) {
+            if (this.isLoading)
+                return;
+            this.onClick.emit(e);
+        };
+        return ButtonComponent;
+    }(ButtonComponentBase));
+    ButtonComponent.ɵfac = function ButtonComponent_Factory(t) { return ɵButtonComponent_BaseFactory(t || ButtonComponent); };
+    ButtonComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: ButtonComponent, selectors: [["zy-button"]], inputs: { type: "type" }, features: [i0__namespace.ɵɵInheritDefinitionFeature], ngContentSelectors: _c2, decls: 6, vars: 10, consts: [[1, "zy-button", 3, "ngClass", "disabled", "click"], [1, "zy-button__wrapper"], [4, "ngIf", "ngIfElse"], ["loading", ""], ["class", "title", 4, "ngIf"], [3, "color"], [1, "title"]], template: function ButtonComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵprojectionDef(_c0$3);
+                i0__namespace.ɵɵelementStart(0, "button", 0);
+                i0__namespace.ɵɵlistener("click", function ButtonComponent_Template_button_click_0_listener($event) { return ctx.clickHandler($event); });
+                i0__namespace.ɵɵelementStart(1, "span", 1);
+                i0__namespace.ɵɵtemplate(2, ButtonComponent_ng_content_2_Template, 1, 0, "ng-content", 2);
+                i0__namespace.ɵɵtemplate(3, ButtonComponent_ng_template_3_Template, 1, 1, "ng-template", null, 3, i0__namespace.ɵɵtemplateRefExtractor);
+                i0__namespace.ɵɵtemplate(5, ButtonComponent_span_5_Template, 2, 0, "span", 4);
+                i0__namespace.ɵɵelementEnd();
+                i0__namespace.ɵɵelementEnd();
+            }
+            if (rf & 2) {
+                var _r1 = i0__namespace.ɵɵreference(4);
+                i0__namespace.ɵɵproperty("ngClass", i0__namespace.ɵɵpureFunction4(5, _c1$2, ctx.color === "secondary", ctx.type === "round", ctx.type === "outlined", ctx.type === "ghost"))("disabled", ctx.isDisabled);
+                i0__namespace.ɵɵadvance(2);
+                i0__namespace.ɵɵproperty("ngIf", !ctx.isLoading)("ngIfElse", _r1);
+                i0__namespace.ɵɵadvance(3);
+                i0__namespace.ɵɵproperty("ngIf", ctx.type !== "round");
+            }
+        }, directives: [i1__namespace.NgClass, i1__namespace.NgIf, LoaderComponent], styles: ["[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{display:inline-block;height:40px;border:none;line-height:1;font-weight:700;font-size:1.3em;text-align:center;outline:none;transition:background-color .15s ease-in-out;cursor:pointer}[_nghost-%COMP%]{font-size:10px}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{display:flex;justify-content:space-around;align-items:center;box-sizing:border-box;padding:0 10px;width:127px;border-radius:5px;background-color:#2196f3;color:#fff}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:active{background-color:#0d87e9}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button__wrapper[_ngcontent-%COMP%]{display:flex;align-items:center}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]{background-color:#efeeea;color:#757575}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:active{background-color:#e6e5de}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]{width:40px;border-radius:50%;font-size:1.4em}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     zy-loader+.title{margin-left:0}[_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{border:1px solid #2196f3;background-color:#bbdefb;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]{border-color:#9e9e9e;background-color:#efeeea;color:#757575}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:active{background-color:#e2e0d9}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]{background-color:transparent;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]     [icon]{transition:color .15s ease-in-out}[_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]{background-color:transparent;color:#757575}[_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]:hover     [icon]{color:#5c5c5c}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover     [icon]{color:#0c7cd5}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled{border:none!important;background-color:transparent!important}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     zy-loader+.title{margin-left:10px}"], changeDetection: 0 });
+    var ɵButtonComponent_BaseFactory = /*@__PURE__*/ i0__namespace.ɵɵgetInheritedFactory(ButtonComponent);
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(ButtonComponent, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'zy-button',
+                        templateUrl: './button.component.html',
+                        styleUrls: ['./button.component.scss'],
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush
+                    }]
+            }], null, { type: [{
+                    type: i0.Input
+                }] });
+    })();
+
+    var ButtonModule = /** @class */ (function () {
+        function ButtonModule() {
+        }
+        return ButtonModule;
+    }());
+    ButtonModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: ButtonModule });
+    ButtonModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function ButtonModule_Factory(t) { return new (t || ButtonModule)(); }, imports: [[
+                i1.CommonModule
+            ]] });
+    (function () {
+        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(ButtonModule, { declarations: [ButtonComponent,
+                LoaderComponent], imports: [i1.CommonModule], exports: [ButtonComponent] });
+    })();
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(ButtonModule, [{
+                type: i0.NgModule,
+                args: [{
+                        imports: [
+                            i1.CommonModule
+                        ],
+                        declarations: [
+                            ButtonComponent,
+                            LoaderComponent
+                        ],
+                        exports: [
+                            ButtonComponent,
+                        ]
+                    }]
+            }], null, null);
+    })();
+
+    var _c0$2 = ["checkbox"];
+    var CheckboxComponent = /** @class */ (function () {
+        function CheckboxComponent() {
+            this.autofocus = false;
+            this.isCheckbox = true;
+            this.checkedChange = new i0.EventEmitter();
+            this.onClick = new i0.EventEmitter();
+        }
+        Object.defineProperty(CheckboxComponent.prototype, "checked", {
+            get: function () {
+                return this._checked;
+            },
+            set: function (checked) {
+                this._checked = checked;
+                this.checkbox.checked = checked; // selection is not always updated based on the model in IE, hence explicitly setting the value via DOM
+            },
+            enumerable: false,
+            configurable: true
+        });
+        // handling 'click' on the element rather than on checkbox as FireFox does not trigger 'click' on checkbox if SHIFT is pressed
+        CheckboxComponent.prototype.onMouseClick = function (event) {
+            var _this = this;
+            if (!this.ignoreTimeout) {
+                this.checkedChange.next(!this._checked);
+                this.onClick.next({
+                    shiftKey: event.shiftKey
+                });
+                // 'click' event might be triggered on the label element and/or bubbled up from the checkbox element -> ignore the second event
+                this.ignoreTimeout = window.setTimeout(function () {
+                    _this.ignoreTimeout = 0;
+                });
+            }
+            this.checkbox.checked = this.checked;
+            this.checkbox.indeterminate = this.indeterminate;
+            this.checkbox.focus(); // compensating for focus not being set due to [dr-prevent-default-on-mousedown]
+        };
+        Object.defineProperty(CheckboxComponent.prototype, "checkboxRef", {
+            set: function (checkboxRef) {
+                this.checkbox = checkboxRef.nativeElement;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        CheckboxComponent.prototype.ngOnDestroy = function () {
+            if (this.ignoreTimeout) {
+                window.clearTimeout(this.ignoreTimeout);
+            }
+        };
+        return CheckboxComponent;
+    }());
+    CheckboxComponent.ɵfac = function CheckboxComponent_Factory(t) { return new (t || CheckboxComponent)(); };
+    CheckboxComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: CheckboxComponent, selectors: [["zy-checkbox"]], viewQuery: function CheckboxComponent_Query(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵstaticViewQuery(_c0$2, true);
+            }
+            if (rf & 2) {
+                var _t = void 0;
+                i0__namespace.ɵɵqueryRefresh(_t = i0__namespace.ɵɵloadQuery()) && (ctx.checkboxRef = _t.first);
+            }
+        }, hostVars: 4, hostBindings: function CheckboxComponent_HostBindings(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵlistener("click", function CheckboxComponent_click_HostBindingHandler($event) { return ctx.onMouseClick($event); });
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵclassProp("is-disabled", ctx.disabled)("checkbox", ctx.isCheckbox);
+            }
+        }, inputs: { checked: "checked", indeterminate: "indeterminate", autofocus: "autofocus", disabled: "disabled" }, outputs: { checkedChange: "checkedChange", onClick: "onClick" }, decls: 2, vars: 3, consts: [["type", "checkbox", 3, "ngModel", "disabled", "indeterminate"], ["checkbox", ""]], template: function CheckboxComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵelement(0, "input", 0, 1);
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵproperty("ngModel", ctx.checked)("disabled", ctx.disabled)("indeterminate", ctx.indeterminate);
+            }
+        }, directives: [i1__namespace$1.CheckboxControlValueAccessor, i1__namespace$1.NgControlStatus, i1__namespace$1.NgModel], encapsulation: 2, changeDetection: 0 });
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(CheckboxComponent, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'zy-checkbox',
+                        templateUrl: './checkbox.component.html',
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush
+                    }]
+            }], null, { checked: [{
+                    type: i0.Input
+                }], indeterminate: [{
+                    type: i0.Input
+                }], autofocus: [{
+                    type: i0.Input
+                }], disabled: [{
+                    type: i0.Input
+                }, {
+                    type: i0.HostBinding,
+                    args: ['class.is-disabled']
+                }], isCheckbox: [{
+                    type: i0.HostBinding,
+                    args: ['class.checkbox']
+                }], onMouseClick: [{
+                    type: i0.HostListener,
+                    args: ['click', ['$event']]
+                }], checkedChange: [{
+                    type: i0.Output
+                }], onClick: [{
+                    type: i0.Output
+                }], checkboxRef: [{
+                    type: i0.ViewChild,
+                    args: ['checkbox', { static: true }]
+                }] });
+    })();
+
+    var CheckboxModule = /** @class */ (function () {
+        function CheckboxModule() {
+        }
+        return CheckboxModule;
+    }());
+    CheckboxModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: CheckboxModule });
+    CheckboxModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function CheckboxModule_Factory(t) { return new (t || CheckboxModule)(); }, imports: [[
+                i1.CommonModule,
+                i1$1.FormsModule,
+                i1$1.ReactiveFormsModule
+            ]] });
+    (function () {
+        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(CheckboxModule, { declarations: [CheckboxComponent], imports: [i1.CommonModule,
+                i1$1.FormsModule,
+                i1$1.ReactiveFormsModule], exports: [CheckboxComponent] });
+    })();
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(CheckboxModule, [{
+                type: i0.NgModule,
+                args: [{
+                        imports: [
+                            i1.CommonModule,
+                            i1$1.FormsModule,
+                            i1$1.ReactiveFormsModule
+                        ],
+                        declarations: [
+                            CheckboxComponent
+                        ],
+                        exports: [
+                            CheckboxComponent,
+                        ]
+                    }]
+            }], null, null);
+    })();
+
+    function PageTitleComponent_div_0_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelementStart(0, "div", 1);
+            i0__namespace.ɵɵelementStart(1, "div", 2);
+            i0__namespace.ɵɵprojection(2);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementStart(3, "div", 3);
+            i0__namespace.ɵɵelementStart(4, "div");
+            i0__namespace.ɵɵelementStart(5, "div", 4);
+            i0__namespace.ɵɵelementStart(6, "div", 5);
+            i0__namespace.ɵɵelementStart(7, "span", 6);
+            i0__namespace.ɵɵtext(8);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementStart(9, "div", 7);
+            i0__namespace.ɵɵprojection(10, 1);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementStart(11, "div", 8);
+            i0__namespace.ɵɵprojection(12, 2);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementStart(13, "div", 7);
+            i0__namespace.ɵɵprojection(14, 3);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementStart(15, "div");
+            i0__namespace.ɵɵelementStart(16, "div", 9);
+            i0__namespace.ɵɵprojection(17, 4);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+        }
+        if (rf & 2) {
+            var ctx_r0 = i0__namespace.ɵɵnextContext();
+            i0__namespace.ɵɵadvance(8);
+            i0__namespace.ɵɵtextInterpolate(ctx_r0.title);
+        }
+    }
+    var _c0$1 = [[["", "page-title-icon", ""]], [["", "page-title-extra", ""]], [["", "page-title-content-centered", ""]], [["", "page-title-content-right", ""]], [["", "page-title-subheader", ""]]];
+    var _c1$1 = ["[page-title-icon]", "[page-title-extra]", "[page-title-content-centered]", "[page-title-content-right]", "[page-title-subheader]"];
+    // import { Title } from '@angular/platform-browser';
+    // import { ActivatedRoute } from '@angular/router';
+    // import { ErrorDisplayService, PageTitle, PageTitleService } from 'app/core';
+    // import { empty, of, Subscription } from 'rxjs';
+    // import { filter, switchMap, tap } from 'rxjs/operators';
+    var PageTitleComponent /* implements OnInit, OnDestroy */ = /** @class */ (function () {
+        function PageTitleComponent() {
+        }
+        return PageTitleComponent;
+    }());
+    PageTitleComponent.ɵfac = function PageTitleComponent_Factory(t) { return new (t || PageTitleComponent /* implements OnInit, OnDestroy */)(); };
+    PageTitleComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: PageTitleComponent /* implements OnInit, OnDestroy */, selectors: [["page-title"]], inputs: { title: "title" }, ngContentSelectors: _c1$1, decls: 1, vars: 1, consts: [["class", "columns is-mobile", 4, "ngIf"], [1, "columns", "is-mobile"], [1, "column", "is-narrow", "is-icon"], [1, "column", "is-wide"], [1, "columns", "page-title", "is-gapless", "is-mobile", "is-centered"], [1, "column", "page-title-text", "is-narrow"], ["data-test-page-title", ""], [1, "column", "is-narrow"], [1, "column", "has-text-centered"], [1, "columns", "is-gapless", "is-mobile"]], template: function PageTitleComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵprojectionDef(_c0$1);
+                i0__namespace.ɵɵtemplate(0, PageTitleComponent_div_0_Template, 18, 1, "div", 0);
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵproperty("ngIf", !ctx.inactive);
+            }
+        }, styles: [""] });
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(PageTitleComponent /* implements OnInit, OnDestroy */, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'page-title',
+                        templateUrl: './page-title.component.html',
+                        styleUrls: ['./page-title.component.scss']
+                    }]
+            }], null, { title: [{
+                    type: i0.Input
+                }] });
+    })();
+
+    var PageTitleModule = /** @class */ (function () {
+        function PageTitleModule() {
+        }
+        return PageTitleModule;
+    }());
+    PageTitleModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: PageTitleModule });
+    PageTitleModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function PageTitleModule_Factory(t) { return new (t || PageTitleModule)(); } });
+    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(PageTitleModule, { declarations: [PageTitleComponent], exports: [PageTitleComponent] }); })();
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(PageTitleModule, [{
+                type: i0.NgModule,
+                args: [{
+                        declarations: [
+                            PageTitleComponent
+                        ],
+                        exports: [
+                            PageTitleComponent
+                        ]
+                    }]
+            }], null, null);
+    })();
+
+    function SplitButtonComponent_ng_container_5_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelementContainerStart(0);
+            i0__namespace.ɵɵtext(1, "\u25BE");
+            i0__namespace.ɵɵelementContainerEnd();
+        }
+    }
+    function SplitButtonComponent_ng_container_6_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelementContainerStart(0);
+            i0__namespace.ɵɵtext(1, "\u25B4");
+            i0__namespace.ɵɵelementContainerEnd();
+        }
+    }
+    function SplitButtonComponent_ng_container_7_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+            var _r6_1 = i0__namespace.ɵɵgetCurrentView();
+            i0__namespace.ɵɵelementStart(0, "div", 7);
+            i0__namespace.ɵɵelementStart(1, "button", 8);
+            i0__namespace.ɵɵlistener("click", function SplitButtonComponent_ng_container_7_div_2_Template_button_click_1_listener($event) { i0__namespace.ɵɵrestoreView(_r6_1); var item_r4 = ctx.$implicit; var ctx_r5 = i0__namespace.ɵɵnextContext(2); item_r4.onClick && item_r4.onClick($event); return ctx_r5.selectHandler($event, true); });
+            i0__namespace.ɵɵtext(2);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementEnd();
+        }
+        if (rf & 2) {
+            var item_r4 = ctx.$implicit;
+            i0__namespace.ɵɵadvance(1);
+            i0__namespace.ɵɵproperty("disabled", item_r4.isDisabled || !item_r4.onClick);
+            i0__namespace.ɵɵadvance(1);
+            i0__namespace.ɵɵtextInterpolate(item_r4.title);
+        }
+    }
+    function SplitButtonComponent_ng_container_7_Template(rf, ctx) {
+        if (rf & 1) {
+            i0__namespace.ɵɵelementContainerStart(0);
+            i0__namespace.ɵɵelementStart(1, "div", 5);
+            i0__namespace.ɵɵtemplate(2, SplitButtonComponent_ng_container_7_div_2_Template, 3, 2, "div", 6);
+            i0__namespace.ɵɵelementEnd();
+            i0__namespace.ɵɵelementContainerEnd();
+        }
+        if (rf & 2) {
+            var ctx_r2 = i0__namespace.ɵɵnextContext();
+            i0__namespace.ɵɵadvance(2);
+            i0__namespace.ɵɵproperty("ngForOf", ctx_r2.items);
+        }
+    }
+    var _c0 = function (a0) { return { "is-secondary": a0 }; };
+    var _c1 = ["*"];
+    var SplitButtonComponent = /** @class */ (function (_super) {
+        __extends(SplitButtonComponent, _super);
+        function SplitButtonComponent(elementRef) {
+            var _this = _super.call(this) || this;
+            _this.elementRef = elementRef;
+            _this.items = [];
+            _this.isSplitClosed = true;
+            return _this;
+        }
+        SplitButtonComponent.prototype.DocumentClick = function (event) {
+            if (!this.elementRef.nativeElement.contains(event.target)) {
+                this.selectHandler(event, true);
+            }
+        };
+        SplitButtonComponent.prototype.clickHandler = function (e) {
+            if (this.isLoading)
+                return;
+            this.selectHandler(e, true);
+            this.onClick.emit(e);
+        };
+        SplitButtonComponent.prototype.selectHandler = function (e, close) {
+            this.isSplitClosed = close || !this.isSplitClosed;
+            if (!this.isSplitClosed)
+                this.animateSubMenu();
+        };
+        SplitButtonComponent.prototype.animateSubMenu = function () {
+            var _this = this;
+            if (this._animationTimer)
+                clearTimeout(this._animationTimer);
+            this._animationTimer = setTimeout(function () {
+                var _a;
+                (_a = _this.elementRef.nativeElement.querySelector('.sub-menu')) === null || _a === void 0 ? void 0 : _a.classList.add('is-opening');
+            }, 0);
+        };
+        return SplitButtonComponent;
+    }(ButtonComponentBase));
+    SplitButtonComponent.ɵfac = function SplitButtonComponent_Factory(t) { return new (t || SplitButtonComponent)(i0__namespace.ɵɵdirectiveInject(i0__namespace.ElementRef)); };
+    SplitButtonComponent.ɵcmp = i0__namespace.ɵɵdefineComponent({ type: SplitButtonComponent, selectors: [["zy-split-button"]], hostBindings: function SplitButtonComponent_HostBindings(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵlistener("click", function SplitButtonComponent_click_HostBindingHandler($event) { return ctx.DocumentClick($event); }, false, i0__namespace.ɵɵresolveDocument);
+            }
+        }, inputs: { items: "items" }, features: [i0__namespace.ɵɵInheritDefinitionFeature], ngContentSelectors: _c1, decls: 8, vars: 8, consts: [[1, "zy-split-button", 3, "ngClass"], [1, "zy-split-button__wrapper"], [1, "zy-split-button__left-part", 3, "disabled", "click"], [1, "zy-split-button__right-part", 3, "disabled", "click"], [4, "ngIf"], [1, "sub-menu"], ["class", "sub-menu__item item", 4, "ngFor", "ngForOf"], [1, "sub-menu__item", "item"], [1, "item__button", 3, "disabled", "click"]], template: function SplitButtonComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵprojectionDef();
+                i0__namespace.ɵɵelementStart(0, "div", 0);
+                i0__namespace.ɵɵelementStart(1, "div", 1);
+                i0__namespace.ɵɵelementStart(2, "button", 2);
+                i0__namespace.ɵɵlistener("click", function SplitButtonComponent_Template_button_click_2_listener($event) { return ctx.clickHandler($event); });
+                i0__namespace.ɵɵprojection(3);
+                i0__namespace.ɵɵelementEnd();
+                i0__namespace.ɵɵelementStart(4, "button", 3);
+                i0__namespace.ɵɵlistener("click", function SplitButtonComponent_Template_button_click_4_listener($event) { return ctx.selectHandler($event); });
+                i0__namespace.ɵɵtemplate(5, SplitButtonComponent_ng_container_5_Template, 2, 0, "ng-container", 4);
+                i0__namespace.ɵɵtemplate(6, SplitButtonComponent_ng_container_6_Template, 2, 0, "ng-container", 4);
+                i0__namespace.ɵɵelementEnd();
+                i0__namespace.ɵɵelementEnd();
+                i0__namespace.ɵɵtemplate(7, SplitButtonComponent_ng_container_7_Template, 3, 1, "ng-container", 4);
+                i0__namespace.ɵɵelementEnd();
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵproperty("ngClass", i0__namespace.ɵɵpureFunction1(6, _c0, ctx.color === "secondary"));
+                i0__namespace.ɵɵadvance(2);
+                i0__namespace.ɵɵproperty("disabled", ctx.isDisabled);
+                i0__namespace.ɵɵadvance(2);
+                i0__namespace.ɵɵproperty("disabled", ctx.isDisabled || !ctx.items.length);
+                i0__namespace.ɵɵadvance(1);
+                i0__namespace.ɵɵproperty("ngIf", ctx.isSplitClosed);
+                i0__namespace.ɵɵadvance(1);
+                i0__namespace.ɵɵproperty("ngIf", !ctx.isSplitClosed);
+                i0__namespace.ɵɵadvance(1);
+                i0__namespace.ɵɵproperty("ngIf", ctx.items.length && !ctx.isSplitClosed);
+            }
+        }, directives: [i1__namespace.NgClass, i1__namespace.NgIf, i1__namespace.NgForOf], styles: ["[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{display:inline-block;height:40px;border:none;line-height:1;font-weight:700;font-size:1.3em;text-align:center;outline:none;transition:background-color .15s ease-in-out;cursor:pointer}[_nghost-%COMP%]{font-size:10px}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{display:flex;justify-content:space-around;align-items:center;box-sizing:border-box;padding:0 10px;width:127px;border-radius:5px;background-color:#2196f3;color:#fff}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:active{background-color:#0d87e9}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button__wrapper[_ngcontent-%COMP%]{display:flex;align-items:center}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]{background-color:#efeeea;color:#757575}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:active{background-color:#e6e5de}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-secondary[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]{width:40px;border-radius:50%;font-size:1.4em}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button.is-round[_ngcontent-%COMP%]     zy-loader+.title{margin-left:0}[_nghost-%COMP%]   .zy-button.is-outlined[_ngcontent-%COMP%]{border:1px solid #2196f3;background-color:#bbdefb;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]{border-color:#9e9e9e;background-color:#efeeea;color:#757575}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:active{background-color:#e2e0d9}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-outlined.is-secondary[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]{background-color:transparent;color:#2196f3}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]     [icon]{transition:color .15s ease-in-out}[_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]{background-color:transparent;color:#757575}[_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost.is-secondary[_ngcontent-%COMP%]:hover     [icon]{color:#5c5c5c}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:hover     [icon]{color:#0c7cd5}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;cursor:default}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-button.is-ghost[_ngcontent-%COMP%]:disabled{border:none!important;background-color:transparent!important}[_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     [icon]+.title, [_nghost-%COMP%]   .zy-button[_ngcontent-%COMP%]     zy-loader+.title{margin-left:10px}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]{position:relative;z-index:20;display:inline-block;color:#fff}[_nghost-%COMP%]   .zy-split-button__wrapper[_ngcontent-%COMP%]{position:relative;z-index:30;display:flex;align-items:center}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{padding:0 10px;width:127px;border-radius:5px 0 0 5px;background-color:#2196f3;color:inherit;font-size:1.3em}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#1791f2}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:active, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#0e8df2}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled{border:1px solid #ccc!important;background-color:#fff!important;color:#ccc!important;cursor:default}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:hover, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:active, [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:hover{background-color:#fff!important;color:#ccc!important}[_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:disabled:hover     [icon], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:active   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:active     [icon], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:hover   .title[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:disabled:hover     [icon]{color:#ccc!important}[_nghost-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{width:40px;border-radius:0 5px 5px 0;border-left:1px solid #fff;font-size:1.8em}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]{color:#757575}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%], [_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{background-color:#efeeea}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__left-part[_ngcontent-%COMP%]:active, [_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#e2e0d9}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]{background-color:#efeeea}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:hover{background-color:#ebe9e4}[_nghost-%COMP%]   .zy-split-button.is-secondary[_ngcontent-%COMP%]   .zy-split-button__right-part[_ngcontent-%COMP%]:active{background-color:#e2e0d9}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]{position:absolute;top:100%;z-index:10;box-sizing:border-box;margin-top:-10px;width:100%;color:#000;border:1px solid #ccc;border-radius:3px;font-size:1.3em;line-height:1;transform:translateY(-7px);opacity:.45;transition:all .15s ease-in-out}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu.is-opening[_ngcontent-%COMP%]{transform:translateY(7px);opacity:1}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu__item[_ngcontent-%COMP%]{background-color:#fff;border-bottom:1px solid #ccc}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu__item[_ngcontent-%COMP%]:last-child{border-bottom:none}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]{display:block;padding:10px 5px;margin:0;width:100%;background:none;background-color:#fff;border:none;transition:background-color .15s ease-in-out;outline:none;cursor:pointer}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]:hover{background-color:hsla(0,0%,80%,.56)}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[_ngcontent-%COMP%]:active{background-color:#cbcbcb}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[disabled][_ngcontent-%COMP%]{cursor:default}[_nghost-%COMP%]   .zy-split-button[_ngcontent-%COMP%]   .sub-menu[_ngcontent-%COMP%]   .item__button[disabled][_ngcontent-%COMP%]:hover{background-color:#fff}"] });
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(SplitButtonComponent, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'zy-split-button',
+                        templateUrl: './split-button.component.html',
+                        styleUrls: ['./split-button.component.scss']
+                    }]
+            }], function () { return [{ type: i0__namespace.ElementRef }]; }, { DocumentClick: [{
+                    type: i0.HostListener,
+                    args: ['document:click', ['$event']]
+                }], items: [{
+                    type: i0.Input
+                }] });
+    })();
+
+    var SplitButtonModule = /** @class */ (function () {
+        function SplitButtonModule() {
+        }
+        return SplitButtonModule;
+    }());
+    SplitButtonModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: SplitButtonModule });
+    SplitButtonModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function SplitButtonModule_Factory(t) { return new (t || SplitButtonModule)(); }, imports: [[
+                i1.CommonModule
+            ]] });
+    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(SplitButtonModule, { declarations: [SplitButtonComponent], imports: [i1.CommonModule], exports: [SplitButtonComponent] }); })();
+    /*@__PURE__*/ (function () {
+        i0__namespace.ɵsetClassMetadata(SplitButtonModule, [{
+                type: i0.NgModule,
+                args: [{
+                        imports: [
+                            i1.CommonModule
+                        ],
+                        declarations: [
+                            SplitButtonComponent
+                        ],
+                        exports: [
+                            SplitButtonComponent,
+                        ]
+                    }]
+            }], null, null);
+    })();
+
     var ZyLibModule = /** @class */ (function () {
         function ZyLibModule() {
         }
@@ -897,30 +951,38 @@
     ZyLibModule.ɵmod = i0__namespace.ɵɵdefineNgModule({ type: ZyLibModule });
     ZyLibModule.ɵinj = i0__namespace.ɵɵdefineInjector({ factory: function ZyLibModule_Factory(t) { return new (t || ZyLibModule)(); }, imports: [[
                 ButtonModule,
-                i1$1.FormsModule,
-                i1$1.ReactiveFormsModule
+                SplitButtonModule,
+                PageTitleModule,
+                CheckboxModule,
             ], ButtonModule,
-            CheckboxModule] });
+            SplitButtonModule,
+            CheckboxModule,
+            PageTitleModule] });
     (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(ZyLibModule, { declarations: [PageTitleComponent], imports: [ButtonModule,
-                i1$1.FormsModule,
-                i1$1.ReactiveFormsModule], exports: [PageTitleComponent, ButtonModule,
-                CheckboxModule] });
+        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(ZyLibModule, { imports: [ButtonModule,
+                SplitButtonModule,
+                PageTitleModule,
+                CheckboxModule], exports: [ButtonModule,
+                SplitButtonModule,
+                CheckboxModule,
+                PageTitleModule] });
     })();
     /*@__PURE__*/ (function () {
         i0__namespace.ɵsetClassMetadata(ZyLibModule, [{
                 type: i0.NgModule,
                 args: [{
-                        declarations: components,
                         imports: [
                             ButtonModule,
-                            i1$1.FormsModule,
-                            i1$1.ReactiveFormsModule
+                            SplitButtonModule,
+                            PageTitleModule,
+                            CheckboxModule,
                         ],
-                        exports: __spread(components, [
+                        exports: [
                             ButtonModule,
-                            CheckboxModule
-                        ])
+                            SplitButtonModule,
+                            CheckboxModule,
+                            PageTitleModule
+                        ]
                     }]
             }], null, null);
     })();
@@ -953,8 +1015,10 @@
     exports.ButtonModule = ButtonModule;
     exports.CheckboxComponent = CheckboxComponent;
     exports.CheckboxModule = CheckboxModule;
-    exports.LoaderComponent = LoaderComponent;
     exports.PageTitleComponent = PageTitleComponent;
+    exports.PageTitleModule = PageTitleModule;
+    exports.SplitButtonComponent = SplitButtonComponent;
+    exports.SplitButtonModule = SplitButtonModule;
     exports.ZyLibModule = ZyLibModule;
     exports.ZyLibService = ZyLibService;
 

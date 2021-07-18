@@ -1,30 +1,12 @@
-import { ElementRef, EventEmitter } from '@angular/core';
-import { Color } from './models/color.types';
+import { ButtonComponentBase } from '../shared/components/button/button.component.base';
 import { ButtonType } from './models/button.types';
-import { SplitButtonItem } from './models/split-button-item.interface';
 import * as i0 from "@angular/core";
-export declare class ButtonComponent {
-    private elementRef;
+export declare class ButtonComponent extends ButtonComponentBase {
     get type(): ButtonType;
     set type(value: ButtonType);
-    get color(): Color;
-    set color(value: Color);
-    get isDisabled(): boolean;
-    set isDisabled(value: boolean);
-    items: SplitButtonItem[];
-    isLoading: boolean;
-    onClick: EventEmitter<Event>;
-    DocumentClick(event: Event): void;
-    isSplitClosed: boolean;
-    private _buttonType;
-    private _buttonColor;
-    private _disabled;
-    private _animationTimer;
-    constructor(elementRef: ElementRef);
+    protected _buttonType: ButtonType;
     clickHandler(e: Event): void;
-    selectHandler(e: Event, close?: boolean): void;
-    private animateSubMenu;
     static ɵfac: i0.ɵɵFactoryDef<ButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<ButtonComponent, "zy-button", never, { "type": "type"; "color": "color"; "isDisabled": "disabled"; "items": "items"; "isLoading": "isLoading"; }, { "onClick": "onClick"; }, never, ["[icon]", "*", "[split-text]"]>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<ButtonComponent, "zy-button", never, { "type": "type"; }, {}, never, ["[icon]", "*"]>;
 }
 //# sourceMappingURL=button.component.d.ts.map
