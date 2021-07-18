@@ -856,7 +856,7 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-split-button._stories.ts",
+                "file": "stories/components/buttons/customize-button._stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
             },
@@ -864,7 +864,7 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-button._stories.ts",
+                "file": "stories/components/buttons/customize-split-button._stories.ts",
                 "type": "object",
                 "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
             },
@@ -896,17 +896,17 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/round.stories.ts",
+                "file": "stories/components/buttons/split-button.stories.ts",
                 "type": "object",
-                "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+                "defaultValue": "{\r\n    onClickTask: action('Click main button!'),\r\n    onClickItem: action('Click item button!'),\r\n}"
             },
             {
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/split-button.stories.ts",
+                "file": "stories/components/buttons/round.stories.ts",
                 "type": "object",
-                "defaultValue": "{\r\n    onClickTask: action('Click main button!'),\r\n    onClickItem: action('Click item button!'),\r\n}"
+                "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
             },
             {
                 "name": "baseSettings",
@@ -944,17 +944,17 @@
                 "name": "Customize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-split-button._stories.ts",
+                "file": "stories/components/buttons/customize-button._stories.ts",
                 "type": "",
-                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
             },
             {
                 "name": "Customize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/customize-button._stories.ts",
+                "file": "stories/components/buttons/customize-split-button._stories.ts",
                 "type": "",
-                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
             },
             {
                 "name": "Disabled",
@@ -984,17 +984,17 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/round.stories.ts",
+                "file": "stories/components/buttons/split-button.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-split-button\r\n            color=\"primary\"\r\n            [items]=\"[{title: 'Test 1'}, {title: 'Test 2'}]\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            Primary Button\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             },
             {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/buttons/split-button.stories.ts",
+                "file": "stories/components/buttons/round.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-split-button\r\n            color=\"primary\"\r\n            [items]=\"[{title: 'Test 1'}, {title: 'Test 2'}]\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            Primary Button\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
             },
             {
                 "name": "Disabled",
@@ -1257,24 +1257,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "stories/components/buttons/customize-split-button._stories.ts": [
-                {
-                    "name": "actionsData",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/customize-split-button._stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
-                },
-                {
-                    "name": "Customize",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/customize-split-button._stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
-                }
-            ],
             "stories/components/buttons/customize-button._stories.ts": [
                 {
                     "name": "actionsData",
@@ -1291,6 +1273,24 @@
                     "file": "stories/components/buttons/customize-button._stories.ts",
                     "type": "",
                     "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-button\r\n            [type]=\"type\"\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            <ng-container *ngIf=\"type === 'split'\" split-text>{{ title }}</ng-container>\r\n            <ng-container *ngIf=\"type !== 'split'\" >{{ title }}</ng-container>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
+                }
+            ],
+            "stories/components/buttons/customize-split-button._stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/customize-split-button._stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+                },
+                {
+                    "name": "Customize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/customize-split-button._stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: any) => ({\r\n    template: `\r\n        <p>This story lets you to check all buttons settings inside Controls panel:</p>\r\n        <hr />\r\n        <zy-split-button\r\n            [color]=\"color\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span *ngIf=\"icon\" icon>{{ icon }}</span>\r\n            {{ title }}\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        ...args,\r\n        onClick: actionsData.onClickTask,\r\n    }\r\n})"
                 }
             ],
             "stories/components/buttons/default.stories.ts": [
@@ -1475,56 +1475,6 @@
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"outlined\"\r\n            color=\"secondary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>With Icon\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 }
             ],
-            "stories/components/buttons/round.stories.ts": [
-                {
-                    "name": "actionsData",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
-                },
-                {
-                    "name": "Disabled",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "PrimaryLoading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            [isLoading]=\"true\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"secondary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                },
-                {
-                    "name": "SecondaryLoading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/buttons/round.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"secondary\"\r\n            [isLoading]=\"true\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
-                }
-            ],
             "stories/components/buttons/split-button.stories.ts": [
                 {
                     "name": "actionsData",
@@ -1573,6 +1523,56 @@
                     "file": "stories/components/buttons/split-button.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `\r\n        <zy-split-button\r\n            color=\"secondary\"\r\n            [items]=\"[{title: 'Combo Item 1', onClick: onItemClick}, {title: 'Combo item 2', onClick: onItemClick}]\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            Primary Button\r\n        </zy-split-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask,\r\n        onItemClick: actionsData.onClickItem\r\n    },\r\n})"
+                }
+            ],
+            "stories/components/buttons/round.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onClickTask: action('Click priority button!'),\r\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n            disabled=\"true\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "PrimaryLoading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"primary\"\r\n            [isLoading]=\"true\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"secondary\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
+                },
+                {
+                    "name": "SecondaryLoading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/buttons/round.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `\r\n        <zy-button\r\n            type=\"round\"\r\n            color=\"secondary\"\r\n            [isLoading]=\"true\"\r\n            (onClick)=\"onClick($event)\"\r\n        >\r\n            <span icon>+</span>\r\n        </zy-button>\r\n    `,\r\n    props: {\r\n        onClick: actionsData.onClickTask\r\n    },\r\n})"
                 }
             ],
             "stories/shared/basic-storries-settings.ts": [
