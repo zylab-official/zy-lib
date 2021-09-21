@@ -66,6 +66,10 @@ export const parameters = {
             'Grey',
             'Blue Grey',
             'Additional'
+          ],
+          'Fonts',
+          [
+            'Overview',
           ]
         ],
       ]

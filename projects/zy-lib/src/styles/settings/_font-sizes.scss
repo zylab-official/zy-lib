@@ -1,0 +1,56 @@
+// $font-general: inherit; //'Segoe UI',"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+$font-general: Roboto, Arial, sans-serif;
+
+/**
+* @tokens General
+* @presenter FontSize
+*/
+$font-size-caption: 12px;
+$font-size-body: 13px;
+$font-size-subheading: 15px;
+$font-size-title: 20px;
+$font-size-headline: 24px;
+$font-size-smaller: 0.8em;
+
+/**
+* @tokens Display Sizes
+* @presenter FontSize
+*/
+$font-size-display1: 34px;
+$font-size-display2: 45px;
+$font-size-display3: 56px;
+$font-size-display4: 112px;
+
+/**
+* @tokens Weight
+* @presenter FontSize
+*/
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+/* NEW MATERIAL DESIGN (2018) FONT_SIZES */
+/**
+* @tokens Material Design
+* @presenter FontSize
+*/
+$font-size-overline: 10px;
+$font-size-caption: 12px;
+$font-size-body1: 16px;
+$font-size-body2: 14px;
+$font-size-subtitle1: 16px;
+$font-size-subtitle2: 14px;
+
+/**
+* @tokens Headlines
+* @presenter FontSize
+*/
+$font-size-headline6: 20px;
+$font-size-headline5: 24px;
+$font-size-headline4: 34px;
+$font-size-headline3: 48px;
+$font-size-headline2: 60px;
+$font-size-headline1: 96px;

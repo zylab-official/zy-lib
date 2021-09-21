@@ -10,7 +10,8 @@ module.exports = {
     // '@storybook/addon-notes/register',
     '@storybook/addon-controls',
     '@storybook/addon-docs',
-    'storybook-design-token',
+    // https://github.com/UX-and-I/storybook-design-token/issues/44
+    // 'storybook-design-token',
     '@geometricpanda/storybook-addon-badges',
     'storybook-addon-xd-designs/register'
   ]
